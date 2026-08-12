@@ -1,3 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 *.csv filter=lfs diff=lfs merge=lfs -text
+paper_data/**/*.csv !filter !diff !merge text linguist-generated=true
+data_clean/mean_risk_rating.csv !filter !diff !merge text

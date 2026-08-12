@@ -5,6 +5,7 @@ import itertools
 # autoreload
 
 from data_helpers import *
+from objective_scoring import score_all_request
 
 # ignore all pandas warnings
 import warnings
@@ -68,10 +69,20 @@ class simulator:
 
         # drop_all supercedes service_fractions. if drop_using_age is True, then all service requests above some drop_age are dropped at the dropping point
         self.drop_using_age = drop_using_age
+        self.drop_age = None
         if self.drop_using_age:
-            self.drop_age = drop_age
-            if self.drop_age is None:
-                self.drop_age = 100
+            effective_drop_age = 100 if drop_age is None else drop_age
+            try:
+                effective_drop_age = float(effective_drop_age)
+            except (TypeError, ValueError) as exc:
+                raise ValueError(
+                    "drop_age must be a finite nonnegative number of days"
+                ) from exc
+            if not np.isfinite(effective_drop_age) or effective_drop_age < 0:
+                raise ValueError(
+                    "drop_age must be a finite nonnegative number of days"
+                )
+            self.drop_age = effective_drop_age
         self.date_list = pd.date_range(start=date_start, end=date_end)
         self.recursive = recursive
         if self.recursive > 1:
@@ -129,8 +140,9 @@ class simulator:
         self.inspections['InspectionDate'] = self.virtual_date_list
         self.inspections['InspectionCount'] = 0
         inspection_counts.rename(columns = {'InspectionCount': 'raw_count'}, inplace = True)
+        cycle_days = len(pd.date_range(start=self.date_start, end=self.date_end))
         for i in range(self.recursive):
-            inspection_counts['virtual_inspection_date'] = pd.to_timedelta(inspection_counts.InspectionDate - pd.to_datetime(self.date_start)).dt.days + i*(pd.to_datetime(self.date_end) - pd.to_datetime(self.date_start)).days
+            inspection_counts['virtual_inspection_date'] = pd.to_timedelta(inspection_counts.InspectionDate - pd.to_datetime(self.date_start)).dt.days + i*cycle_days
             inspection_counts['virtual_inspection_date'] = inspection_counts['virtual_inspection_date'].astype(int)
             self.inspections = self.inspections.merge(inspection_counts[['virtual_inspection_date', 'raw_count']], left_on='InspectionDate', right_on='virtual_inspection_date', how='outer')
             self.inspections['InspectionCount'] = self.inspections['InspectionCount'].fillna(0)
@@ -186,12 +198,53 @@ class simulator:
         self.inspected_srs = pd.DataFrame(columns=['CreatedDate', 'BoroughCode', 'SRCategory', 'InspectionDate', 'GlobalID'])
         self.dropped_srs = pd.DataFrame(columns=['CreatedDate', 'BoroughCode', 'SRCategory', 'GlobalID'])
         self.backlog_srs = pd.DataFrame(columns=['CreatedDate', 'BoroughCode', 'SRCategory', 'GlobalID'])
+
+    def _review_due(self, borough):
+        frequency = int(self.dropping_frequency[borough])
+        if frequency <= 0:
+            raise ValueError("Dropping frequencies must be positive")
+        return (self.virtual_date + 1) % frequency == 0
+
+    def _drop_reviewed_backlog(self, backlog_srs, borough):
+        if not self._review_due(borough) or backlog_srs.empty:
+            return backlog_srs
+
+        BoroughCode = self.boroughs[borough]
+        work = backlog_srs.reset_index(drop=True).copy()
+        target_indices = work.index[work['BoroughCode'] == BoroughCode]
+        if len(target_indices) == 0:
+            return work
+
+        if self.drop_using_age:
+            old = work.loc[target_indices, 'CreatedDate'] < self.virtual_date - self.drop_age
+            drop_indices = target_indices[np.asarray(old)]
+        else:
+            if self.byborough_policy:
+                policy = self.policy.set_index(['BoroughCode', 'SRCategory'])['fraction']
+                keys = pd.MultiIndex.from_frame(work.loc[target_indices, ['BoroughCode', 'SRCategory']])
+            else:
+                policy = self.policy.set_index('SRCategory')['fraction']
+                keys = work.loc[target_indices, 'SRCategory']
+            fractions = policy.reindex(keys)
+            if fractions.isna().any():
+                raise ValueError(f"Missing service fraction for Borough {BoroughCode}")
+            keep = np.random.binomial(1, fractions.to_numpy())
+            drop_indices = target_indices[keep == 0]
+
+        if len(drop_indices) > 0:
+            dropped = work.loc[drop_indices, ['CreatedDate', 'BoroughCode', 'SRCategory', 'GlobalID']]
+            self.dropped_srs = pd.concat([self.dropped_srs, dropped], ignore_index=True)
+            work = work.drop(index=drop_indices)
+        return work.reset_index(drop=True)
     
     def simulate_day(self, date):
+        # first grab the service requests that were created on this day
+        self.get_srs_on_date(date)
+
         # next get the number of inspections on this day, and determine which srs in the backlog should be inspected
         try:
-            inspections_on_date = self.inspections.loc[self.virtual_date][0]
-        except:
+            inspections_on_date = self.inspections.loc[self.virtual_date].iloc[0]
+        except (KeyError, IndexError):
             self.virtual_date += 1
             return
 
@@ -224,6 +277,9 @@ class simulator:
                 continue
         
             if inspections_in_borough == 0:
+                backlog_srs = backlog_srs.reset_index()[['CreatedDate', 'BoroughCode', 'SRCategory', 'GlobalID']]
+                backlog_srs = self._drop_reviewed_backlog(backlog_srs, borough)
+                self.backlog_srs = backlog_srs
                 continue
             elif inspections_in_borough >= backlogs_in_borough:
                 backlog_srs.loc[BoroughCode, 'Inspected'] = 1
@@ -293,27 +349,11 @@ class simulator:
 
             backlog_srs = backlog_srs[backlog_srs['Inspected'] == 0][['CreatedDate', 'BoroughCode', 'SRCategory', 'GlobalID']]
 
-            # now do the dropping according to service fractions, do this for each borough separately, as they potentially have different cadences
-            if self.virtual_date%self.dropping_frequency[borough] ==0:
-                if backlog_srs[backlog_srs.BoroughCode == BoroughCode].shape[0] > 0:
-                    if not self.drop_using_age:
-                        backlog_srs = backlog_srs.merge(self.policy[['BoroughCode', 'SRCategory','fraction']], on=['BoroughCode', 'SRCategory'])
-                        backlog_srs['drop'] = np.random.binomial(1, backlog_srs['fraction'])
-                        dropped_on_date = backlog_srs[(backlog_srs['drop'] == 0) & (backlog_srs['BoroughCode'] == BoroughCode)]
-                        self.dropped_srs = pd.concat([self.dropped_srs, dropped_on_date[['CreatedDate', 'BoroughCode', 'SRCategory', 'GlobalID']]])
-                        backlog_srs = backlog_srs[(backlog_srs['drop'] == 1) | (backlog_srs['BoroughCode'] != BoroughCode)]
-                    else:
-                        backlog_srs['drop'] = np.where(backlog_srs['CreatedDate'] < self.virtual_date - self.drop_age, 0, 1)
-                        dropped_on_date = backlog_srs[backlog_srs['drop'] == 0]
-                        self.dropped_srs = pd.concat([self.dropped_srs, dropped_on_date[['CreatedDate', 'BoroughCode', 'SRCategory', 'GlobalID']]])
-                        backlog_srs = backlog_srs[backlog_srs['drop'] == 1]
+            backlog_srs = self._drop_reviewed_backlog(backlog_srs, borough)
 
             self.backlog_srs = backlog_srs[['CreatedDate', 'BoroughCode', 'SRCategory', 'GlobalID']]
 
             self.inspected_srs = pd.concat([self.inspected_srs, inspected])
-
-        # lastly grab the service requests that were created on this day
-        self.get_srs_on_date(date)
 
         self.virtual_date += 1
     
@@ -325,8 +365,8 @@ class simulator:
         
         # next get the number of inspections on this day, and determine which srs in the backlog should be inspected
         try:
-            inspections_on_date = self.inspections.loc[self.virtual_date][0]
-        except:
+            inspections_on_date = self.inspections.loc[self.virtual_date].iloc[0]
+        except (KeyError, IndexError):
             self.virtual_date += 1
             print("No inspections on date")
             return
@@ -342,9 +382,10 @@ class simulator:
             backlogs = -1
 
         if backlogs <= 0:
+            self.virtual_date += 1
             return
         elif inspections_on_date >= backlogs:
-            backlog_srs.loc['Inspected'] = 1
+            backlog_srs['Inspected'] = 1
             # print('should be inspected on date', date, 'in borough', BoroughCode, ':', len(backlog_srs.loc[[BoroughCode]]), flush=True)
         else: # the number of available inspections is less than the number of srs in the backlog, we need to determine the number of inspections for each category
             # get the number of srs in each category
@@ -419,27 +460,8 @@ class simulator:
 
         backlog_srs = backlog_srs[backlog_srs['Inspected'] == 0][['CreatedDate', 'BoroughCode', 'SRCategory', 'GlobalID']]
 
-        # now do the dropping according to service fractions
-        if self.virtual_date%39 ==0:
-            if backlog_srs.shape[0] > 0:
-                if not self.drop_using_age:
-                    if self.byborough_policy:
-                        backlog_srs = backlog_srs.merge(self.policy[['BoroughCode', 'SRCategory','fraction']], on=['BoroughCode', 'SRCategory'])
-                        backlog_srs['drop'] = np.random.binomial(1, backlog_srs['fraction'])
-                        dropped_on_date = backlog_srs[backlog_srs['drop'] == 0]
-                        self.dropped_srs = pd.concat([self.dropped_srs, dropped_on_date[['CreatedDate', 'BoroughCode', 'SRCategory', 'GlobalID']]])
-                        backlog_srs = backlog_srs[backlog_srs['drop'] == 1]
-                    else:
-                        backlog_srs = backlog_srs.merge(self.policy[['SRCategory','fraction']], on=['SRCategory'])
-                        backlog_srs['drop'] = np.random.binomial(1, backlog_srs['fraction'])
-                        dropped_on_date = backlog_srs[backlog_srs['drop'] == 0]
-                        self.dropped_srs = pd.concat([self.dropped_srs, dropped_on_date[['CreatedDate', 'BoroughCode', 'SRCategory', 'GlobalID']]])
-                        backlog_srs = backlog_srs[backlog_srs['drop'] == 1]
-                else:
-                    backlog_srs['drop'] = np.where(backlog_srs['CreatedDate'] < self.virtual_date - self.drop_age, 0, 1)
-                    dropped_on_date = backlog_srs[backlog_srs['drop'] == 0]
-                    self.dropped_srs = pd.concat([self.dropped_srs, dropped_on_date[['CreatedDate', 'BoroughCode', 'SRCategory', 'GlobalID']]])
-                    backlog_srs = backlog_srs[backlog_srs['drop'] == 1]
+        for borough in range(len(self.boroughs)):
+            backlog_srs = self._drop_reviewed_backlog(backlog_srs, borough)
 
         self.backlog_srs = backlog_srs[['CreatedDate', 'BoroughCode', 'SRCategory', 'GlobalID']]
 
@@ -455,27 +477,28 @@ class simulator:
         We now delay the dropping to when inspections are done
         '''
         try:
-            srs_on_date = self.srs.loc[date].reset_index()
+            srs_on_date = self.srs.loc[[pd.Timestamp(date)]].reset_index()
             srs_on_date['CreatedDate'] = self.virtual_date
-            self.backlog_srs = pd.concat([self.backlog_srs, srs_on_date])
-        except:
+            self.backlog_srs = pd.concat([self.backlog_srs, srs_on_date], ignore_index=True)
+        except KeyError:
             pass
     
-    def save_log_delay(self):
+    def save_log_delay(self, write_files=True):
         ins = self.inspected_srs.copy(deep=True)
-        srid_to_ct = pd.read_csv('./data_clean/srid_to_ct.csv')
-        ins = ins.merge(srid_to_ct, on='GlobalID')
         ins = ins[ins.SRCategory.isin(['Hazard', 'Illegal Tree Damage', 'Other', 'Prune', 'Remove Tree',  'Root/Sewer/Sidewalk'])]
         ins['delay'] = ins['InspectionDate'] - ins['CreatedDate']
-        self.log_delay_GEOID = ins.groupby(['SRCategory','BoroughCode', 'GEOID']).agg(
-            delay_25 = pd.NamedAgg(column='delay', aggfunc=lambda x: x.quantile(0.25)),
-            delay_median = pd.NamedAgg(column='delay', aggfunc=lambda x: x.quantile(0.50)),
-            delay_75 = pd.NamedAgg(column='delay', aggfunc=lambda x: x.quantile(0.75)),
-            delay_90 = pd.NamedAgg(column='delay', aggfunc=lambda x: x.quantile(0.90)),
-            delay_95 = pd.NamedAgg(column='delay', aggfunc=lambda x: x.quantile(0.95)),
-            delay_mean = pd.NamedAgg(column='delay', aggfunc='mean'),
-                                                    ).reset_index()
-        self.log_delay_GEOID.to_csv(self.save_path + 'log_delay_censustract_' + '_citybudget_' + str(self.city_budget) +  self.save_label + '.csv', index=False)
+        if write_files:
+            srid_to_ct = pd.read_csv('./data_clean/srid_to_ct.csv')
+            mapped = ins.merge(srid_to_ct, on='GlobalID')
+            self.log_delay_GEOID = mapped.groupby(['SRCategory','BoroughCode', 'GEOID']).agg(
+                delay_25 = pd.NamedAgg(column='delay', aggfunc=lambda x: x.quantile(0.25)),
+                delay_median = pd.NamedAgg(column='delay', aggfunc=lambda x: x.quantile(0.50)),
+                delay_75 = pd.NamedAgg(column='delay', aggfunc=lambda x: x.quantile(0.75)),
+                delay_90 = pd.NamedAgg(column='delay', aggfunc=lambda x: x.quantile(0.90)),
+                delay_95 = pd.NamedAgg(column='delay', aggfunc=lambda x: x.quantile(0.95)),
+                delay_mean = pd.NamedAgg(column='delay', aggfunc='mean'),
+                                                        ).reset_index()
+            self.log_delay_GEOID.to_csv(self.save_path + 'log_delay_censustract_' + '_citybudget_' + str(self.city_budget) +  self.save_label + '.csv', index=False)
 
         self.log_delay_Borough = ins.groupby(['SRCategory','BoroughCode']).agg(
             delay_25 = pd.NamedAgg(column='delay', aggfunc=lambda x: x.quantile(0.25)),
@@ -485,7 +508,8 @@ class simulator:
             delay_95 = pd.NamedAgg(column='delay', aggfunc=lambda x: x.quantile(0.95)),
             delay_mean = pd.NamedAgg(column='delay', aggfunc='mean'),
                                                     ).reset_index()
-        self.log_delay_Borough.to_csv(self.save_path + 'log_delay_borough_' + '_citybudget_' + str(self.city_budget) +  self.save_label + '.csv', index=False)
+        if write_files:
+            self.log_delay_Borough.to_csv(self.save_path + 'log_delay_borough_' + '_citybudget_' + str(self.city_budget) +  self.save_label + '.csv', index=False)
 
 
         # additional logging of percentage inspected
@@ -496,11 +520,12 @@ class simulator:
         gbtotal = pd.merge(gbtotal, gbdrop, on=['SRCategory', 'BoroughCode'], how='outer')
         gbtotal = gbtotal.fillna(0)
         gbtotal['total'] = gbtotal['inspected'] + gbtotal['backlog'] + gbtotal['dropped']
-        gbtotal['FracInspected'] = gbtotal['inspected'] / (gbtotal['total'] + 1)
+        gbtotal['FracInspected'] = np.where(gbtotal['total'] > 0, gbtotal['inspected'] / gbtotal['total'], 0)
         gbtotal = gbtotal.fillna(0)
         gbtotal = gbtotal[['BoroughCode', 'SRCategory', 'FracInspected']]
         self.gbtotal = gbtotal
-        gbtotal.to_csv(self.save_path + 'log_fracinspected_borough_' + '_citybudget_' + str(self.city_budget) +  self.save_label + '.csv', index=False)
+        if write_files:
+            gbtotal.to_csv(self.save_path + 'log_fracinspected_borough_' + '_citybudget_' + str(self.city_budget) +  self.save_label + '.csv', index=False)
 
     def calc_objectives(self):
         # calculate sr counts and read in mean risk rating
@@ -513,23 +538,27 @@ class simulator:
         df_objectives = df_objectives.fillna(0)
 
         # calculate the objectives
-        df_objectives['delay_cost'] = df_objectives['SRCount'] * df_objectives['FracInspected'] * df_objectives[self.sla_objective] * df_objectives['RiskRating']
-        df_objectives['drop_cost'] = df_objectives['SRCount'] * (1 - df_objectives['FracInspected']) * df_objectives['RiskRating'] * self.drop_cost
-        df_objectives['total_cost'] = df_objectives['delay_cost'] + df_objectives['drop_cost']
+        self.df_objectives, self.efficiency_objectives, allrequest_equity = score_all_request(
+            df_objectives.query('SRCategory != "Plant Tree"'),
+            delay_column=self.sla_objective,
+            drop_cost=self.drop_cost,
+        )
 
         # save the objectives
-        self.df_objectives = df_objectives.query('SRCategory != "Plant Tree"')
-        self.efficiency_objectives = self.df_objectives['total_cost'].sum()
         if self.equity == "max":
-            self.equity_objectives = df_objectives.groupby('BoroughCode')['total_cost'].sum().max()
+            self.equity_objectives = self.df_objectives.groupby('BoroughCode')['total_cost'].sum().max()
         elif self.equity == "varfrac":
             def max_min(x):
                 return np.max(x) - np.min(x)
-            self.equity_objectives = df_objectives.groupby('SRCategory').apply(lambda x: max_min(x.FracInspected) * x.RiskRating.mean()).sum()
+            self.equity_objectives = self.df_objectives.groupby('SRCategory').apply(lambda x: max_min(x.FracInspected) * x.RiskRating.mean()).sum()
         elif self.equity == "varsla":
             def max_min(x):
                 return np.max(x) - np.min(x)
-            self.equity_objectives = df_objectives.groupby('SRCategory').apply(lambda x: max_min(x[self.sla_objective]) * x.RiskRating.mean()).sum()/100
+            self.equity_objectives = self.df_objectives.groupby('SRCategory').apply(lambda x: max_min(x[self.sla_objective]) * x.RiskRating.mean()).sum()/100
+        elif self.equity == "allrequest":
+            self.equity_objectives = allrequest_equity/100
+        else:
+            raise ValueError(f"Unknown equity objective: {self.equity}")
 
 
     def simulate(self):
@@ -542,8 +571,6 @@ class simulator:
                 self.simulate_day_citybudget(date)
             else:
                 self.simulate_day(date)
-        if self.save_logs:
-            self.save_log_delay()
+        self.save_log_delay(write_files=self.save_logs)
         if self.calc_multi_objectives:
             self.calc_objectives()
-    

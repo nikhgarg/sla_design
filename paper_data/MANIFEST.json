@@ -1,0 +1,1460 @@
+{
+  "determinism": "all source hashes and row-count/support invariants are fail-closed",
+  "excluded_surfaces": [
+    "recorded-risk delay regression"
+  ],
+  "files": [
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "replication provenance"
+      ],
+      "ordered_columns": [],
+      "relative_path": "SOURCE_ARTIFACTS.json",
+      "row_count": null,
+      "schema": {
+        "format": "JSON",
+        "schema": "sla-public-source-artifacts-v1"
+      },
+      "sha256": "8ecf531d56017d2fcd09ddfe66bc01b18b2603bba320e81f19f895e47d8f96c7",
+      "size_bytes": 18760,
+      "source_ids": [],
+      "transformation": "sanitized provenance ledger"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "descriptive appendix table"
+      ],
+      "ordered_columns": [
+        "year",
+        "Bronx",
+        "Brooklyn",
+        "Manhattan",
+        "Queens",
+        "Staten Island"
+      ],
+      "relative_path": "descriptive/annual_simulation_inspection_rows_by_borough.csv",
+      "row_count": 4,
+      "schema": {
+        "Bronx": "integer",
+        "Brooklyn": "integer",
+        "Manhattan": "integer",
+        "Queens": "integer",
+        "Staten Island": "integer",
+        "year": "integer"
+      },
+      "sha256": "50db3004a185aefd425f2c7d85b90ed856e79d64769d534dce881faf7fa12720",
+      "size_bytes": 179,
+      "source_ids": [
+        "accounting_by_borough_year_2019_2022"
+      ],
+      "transformation": "filtered authenticated accounting rows to active_six_category and inspection_year_capacity_linkage_rows, then pivoted by calendar year and Borough"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "descriptive appendix table"
+      ],
+      "ordered_columns": [
+        "year",
+        "Bronx",
+        "Brooklyn",
+        "Manhattan",
+        "Queens",
+        "Staten Island"
+      ],
+      "relative_path": "descriptive/annual_simulation_request_rows_by_borough.csv",
+      "row_count": 4,
+      "schema": {
+        "Bronx": "integer",
+        "Brooklyn": "integer",
+        "Manhattan": "integer",
+        "Queens": "integer",
+        "Staten Island": "integer",
+        "year": "integer"
+      },
+      "sha256": "958de952247f9f2e010120d705a83f5c0837040d5f18082b5b09522359632c3b",
+      "size_bytes": 183,
+      "source_ids": [
+        "accounting_by_borough_year_2019_2022"
+      ],
+      "transformation": "filtered authenticated accounting rows to active_six_category and created_cohort_linkage_rows, then pivoted by calendar year and Borough"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "broad descriptive audit/support"
+      ],
+      "ordered_columns": [
+        "year",
+        "Bronx",
+        "Brooklyn",
+        "Manhattan",
+        "Queens",
+        "Staten Island"
+      ],
+      "relative_path": "descriptive/annual_inspection_rows_by_borough.csv",
+      "row_count": 4,
+      "schema": {
+        "Bronx": "integer",
+        "Brooklyn": "integer",
+        "Manhattan": "integer",
+        "Queens": "integer",
+        "Staten Island": "integer",
+        "year": "integer"
+      },
+      "sha256": "611dbd72b44366fa02f830b02a9d40bd2b03c635c3445e8b7596eb63b6cb22b1",
+      "size_bytes": 179,
+      "source_ids": [
+        "annual_inspections"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate retained for broad seven-category audit support"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "broad descriptive audit/support"
+      ],
+      "ordered_columns": [
+        "year",
+        "Bronx",
+        "Brooklyn",
+        "Manhattan",
+        "Queens",
+        "Staten Island"
+      ],
+      "relative_path": "descriptive/annual_request_rows_by_borough.csv",
+      "row_count": 4,
+      "schema": {
+        "Bronx": "integer",
+        "Brooklyn": "integer",
+        "Manhattan": "integer",
+        "Queens": "integer",
+        "Staten Island": "integer",
+        "year": "integer"
+      },
+      "sha256": "d2132322858ebaea6f6bee1594807d56186b3a4b05dc0ce75e8711f4d7c63ccb",
+      "size_bytes": 185,
+      "source_ids": [
+        "annual_requests"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate retained for broad seven-category audit support"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "recorded-risk figure"
+      ],
+      "ordered_columns": [
+        "BoroughCode",
+        "risk_rating",
+        "row_count"
+      ],
+      "relative_path": "descriptive/hazard_risk_counts.csv",
+      "row_count": 65,
+      "schema": {
+        "BoroughCode": "string",
+        "risk_rating": "integer",
+        "row_count": "integer"
+      },
+      "sha256": "538535cfbf0e4cb1332b69c001bfa8c16a2377d1dfa596b66278304fc8c6f550",
+      "size_bytes": 1021,
+      "source_ids": [
+        "hazard_risk_counts"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "recorded-risk figure"
+      ],
+      "ordered_columns": [
+        "BoroughCode",
+        "row_count",
+        "unique_service_requests",
+        "mean_risk_rating",
+        "median_risk_rating",
+        "min_risk_rating",
+        "max_risk_rating",
+        "repeated_rows"
+      ],
+      "relative_path": "descriptive/hazard_risk_summary.csv",
+      "row_count": 5,
+      "schema": {
+        "BoroughCode": "string",
+        "max_risk_rating": "number",
+        "mean_risk_rating": "number",
+        "median_risk_rating": "number",
+        "min_risk_rating": "number",
+        "repeated_rows": "integer",
+        "row_count": "integer",
+        "unique_service_requests": "integer"
+      },
+      "sha256": "509747b957609c113dc283697b45f668cc79b37b35fe599d039ff9942038cae1",
+      "size_bytes": 407,
+      "source_ids": [
+        "hazard_risk_summary"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "observed-delay appendix figure"
+      ],
+      "ordered_columns": [
+        "category",
+        "borough",
+        "bin_left_days",
+        "bin_right_days",
+        "right_edge_inclusive",
+        "row_count",
+        "density_per_day"
+      ],
+      "relative_path": "descriptive/observed_delay_histogram_bins.csv",
+      "row_count": 600,
+      "schema": {
+        "bin_left_days": "number",
+        "bin_right_days": "number",
+        "borough": "string",
+        "category": "string",
+        "density_per_day": "number",
+        "right_edge_inclusive": "boolean",
+        "row_count": "integer"
+      },
+      "sha256": "5ad429b1ea258fa4e6d8156eea1c14dc9c227c348e994f39f29845b031bb2670",
+      "size_bytes": 34542,
+      "source_ids": [
+        "delay_bins"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "observed-delay appendix figure"
+      ],
+      "ordered_columns": [
+        "category",
+        "borough",
+        "matching_rows",
+        "unique_service_requests",
+        "repeated_rows",
+        "valid_delay_rows",
+        "negative_delay_rows",
+        "displayed_delay_rows",
+        "above_display_range_rows",
+        "display_upper_edge_days",
+        "first_day_density",
+        "median_displayed_delay_days",
+        "mean_displayed_delay_days",
+        "documented_sla_days"
+      ],
+      "relative_path": "descriptive/observed_delay_histogram_summary.csv",
+      "row_count": 12,
+      "schema": {
+        "above_display_range_rows": "integer",
+        "borough": "string",
+        "category": "string",
+        "display_upper_edge_days": "integer",
+        "displayed_delay_rows": "integer",
+        "documented_sla_days": "number",
+        "first_day_density": "number",
+        "matching_rows": "integer",
+        "mean_displayed_delay_days": "number",
+        "median_displayed_delay_days": "number",
+        "negative_delay_rows": "integer",
+        "repeated_rows": "integer",
+        "unique_service_requests": "integer",
+        "valid_delay_rows": "string"
+      },
+      "sha256": "9d62d1b9518e09f8fcf0358f417f4e40e16e0623a7d2b2b65b4162fa89a7c7bb",
+      "size_bytes": 1571,
+      "source_ids": [
+        "delay_summary"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "descriptive appendix table"
+      ],
+      "ordered_columns": [
+        "category",
+        "Bronx",
+        "Brooklyn",
+        "Manhattan",
+        "Queens",
+        "Staten Island",
+        "Assigned category priority weight"
+      ],
+      "relative_path": "descriptive/observed_risk_and_priority_by_category.csv",
+      "row_count": 6,
+      "schema": {
+        "Assigned category priority weight": "string",
+        "Bronx": "number",
+        "Brooklyn": "number",
+        "Manhattan": "number",
+        "Queens": "number",
+        "Staten Island": "number",
+        "category": "string"
+      },
+      "sha256": "101371c16e0aee6613ae2d1a4114c4135cf8f417a45d528fac24e7f2aef43e17",
+      "size_bytes": 335,
+      "source_ids": [
+        "observed_risk_priority"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "weekly inspection figure"
+      ],
+      "ordered_columns": [
+        "year",
+        "week",
+        "merged_row_count"
+      ],
+      "relative_path": "descriptive/weekly_inspections.csv",
+      "row_count": 209,
+      "schema": {
+        "merged_row_count": "integer",
+        "week": "integer",
+        "year": "integer"
+      },
+      "sha256": "7e6da9160d69c368afe26ec20b9b1d1e6958e7d01d51e22d85b4cd05901a7fe5",
+      "size_bytes": 2613,
+      "source_ids": [
+        "weekly_inspections"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "weekly request figure"
+      ],
+      "ordered_columns": [
+        "year",
+        "week",
+        "merged_row_count"
+      ],
+      "relative_path": "descriptive/weekly_service_requests.csv",
+      "row_count": 209,
+      "schema": {
+        "merged_row_count": "integer",
+        "week": "integer",
+        "year": "integer"
+      },
+      "sha256": "e50eff3bd4f4f65507e3dfcfb5d368dca634408fdfe4a8210727f63355be9d37",
+      "size_bytes": 2663,
+      "source_ids": [
+        "weekly_requests"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "optimization convergence appendix"
+      ],
+      "ordered_columns": [
+        "arm_name",
+        "budget_group",
+        "search_mode",
+        "global_batch",
+        "observations",
+        "target_observations",
+        "endpoint_best_loss",
+        "hypervolume_pct_final",
+        "elapsed_hours"
+      ],
+      "relative_path": "primary/bo_search_progress.csv",
+      "row_count": 272,
+      "schema": {
+        "arm_name": "string",
+        "budget_group": "string",
+        "elapsed_hours": "number",
+        "endpoint_best_loss": "number",
+        "global_batch": "integer",
+        "hypervolume_pct_final": "number",
+        "observations": "integer",
+        "search_mode": "string",
+        "target_observations": "integer"
+      },
+      "sha256": "8463d3745b5eefaeabed265d7de6e85be1d1a92ef886e915b7a2aeff9b41bbda",
+      "size_bytes": 28026,
+      "source_ids": [
+        "search_progress_source"
+      ],
+      "transformation": "project manuscript-facing progress fields; remove fingerprints and internal seeds"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "budget-allocation table"
+      ],
+      "ordered_columns": [
+        "Borough",
+        "fraction_of_2019_requests",
+        "historical_eventual_inspection_share",
+        "borough_most_efficient_budget_share",
+        "borough_most_equitable_budget_share",
+        "balanced_budget_share"
+      ],
+      "relative_path": "primary/budget_allocation.csv",
+      "row_count": 5,
+      "schema": {
+        "Borough": "string",
+        "balanced_budget_share": "number",
+        "borough_most_efficient_budget_share": "string",
+        "borough_most_equitable_budget_share": "string",
+        "fraction_of_2019_requests": "number",
+        "historical_eventual_inspection_share": "number"
+      },
+      "sha256": "0892d912a14d59e9ff1a4dc020c2cea668d1e92f49e30c1a539f16ba725516f7",
+      "size_bytes": 701,
+      "source_ids": [
+        "budget_allocation"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "main Hazard panel"
+      ],
+      "ordered_columns": [
+        "borough",
+        "role",
+        "bin_index",
+        "bin_left_days",
+        "bin_right_days",
+        "bin_label",
+        "inspected_delay_count",
+        "terminal_uninspected_count",
+        "display_count",
+        "all_request_count",
+        "display_share_percent"
+      ],
+      "relative_path": "primary/hazard_histogram_bins.csv",
+      "row_count": 315,
+      "schema": {
+        "all_request_count": "integer",
+        "bin_index": "integer",
+        "bin_label": "string",
+        "bin_left_days": "integer",
+        "bin_right_days": "integer",
+        "borough": "string",
+        "display_count": "integer",
+        "display_share_percent": "number",
+        "inspected_delay_count": "integer",
+        "role": "string",
+        "terminal_uninspected_count": "integer"
+      },
+      "sha256": "06a98f8a966748d279af571e01e851acf0de59c6a37ca7aedb3076a8ab56dc29",
+      "size_bytes": 25710,
+      "source_ids": [
+        "historical_hazard_events",
+        "borough_hazard_delays",
+        "city_hazard_delays",
+        "hazard_diagnostics"
+      ],
+      "transformation": "aggregate inspected delays into one-day bins; add only displayed uninspected outcomes to terminal bin"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "main Hazard panel"
+      ],
+      "ordered_columns": [
+        "BoroughCode",
+        "budget_group",
+        "n_rows",
+        "n_all_requests",
+        "n_inspected_delay_rows",
+        "n_end_backlog",
+        "n_end_backlog_at_or_above_display_cap",
+        "n_end_backlog_below_display_cap",
+        "n_dropped",
+        "n_uninspected",
+        "n_terminal_uninspected_displayed",
+        "n_eventual_historical_noninspection",
+        "median_delay_days",
+        "max_delay_days",
+        "inspected_rows_at_or_above_display_cap",
+        "rows_at_or_above_display_cap",
+        "display_terminal_outcome_count",
+        "display_terminal_outcome_share_percent",
+        "displayed_request_share_percent",
+        "display_overflow_threshold_days",
+        "display_overflow_bin_label",
+        "display_terminal_category_definition",
+        "histogram_units",
+        "display_y_ceiling_percent"
+      ],
+      "relative_path": "primary/hazard_histogram_diagnostics.csv",
+      "row_count": 15,
+      "schema": {
+        "BoroughCode": "string",
+        "budget_group": "string",
+        "display_overflow_bin_label": "string",
+        "display_overflow_threshold_days": "number",
+        "display_terminal_category_definition": "string",
+        "display_terminal_outcome_count": "integer",
+        "display_terminal_outcome_share_percent": "number",
+        "display_y_ceiling_percent": "number",
+        "displayed_request_share_percent": "number",
+        "histogram_units": "string",
+        "inspected_rows_at_or_above_display_cap": "integer",
+        "max_delay_days": "number",
+        "median_delay_days": "number",
+        "n_all_requests": "integer",
+        "n_dropped": "integer",
+        "n_end_backlog": "integer",
+        "n_end_backlog_at_or_above_display_cap": "integer",
+        "n_end_backlog_below_display_cap": "integer",
+        "n_eventual_historical_noninspection": "integer",
+        "n_inspected_delay_rows": "integer",
+        "n_rows": "integer",
+        "n_terminal_uninspected_displayed": "integer",
+        "n_uninspected": "integer",
+        "rows_at_or_above_display_cap": "integer"
+      },
+      "sha256": "16f3d7eb342dd3ae80113c2899d1c20ac65f89d32c26ae83d88d488fa931dacf",
+      "size_bytes": 4481,
+      "source_ids": [
+        "hazard_diagnostics"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "main Pareto panel"
+      ],
+      "ordered_columns": [
+        "efficiency_total_cost_delay_median",
+        "allrequest_equity_delay_median",
+        "efficiency_pct_borough_efficient",
+        "equity_pct_borough_efficient",
+        "efficiency_pct_historical",
+        "equity_pct_historical"
+      ],
+      "relative_path": "primary/historical_reference.csv",
+      "row_count": 1,
+      "schema": {
+        "allrequest_equity_delay_median": "number",
+        "efficiency_pct_borough_efficient": "string",
+        "efficiency_pct_historical": "number",
+        "efficiency_total_cost_delay_median": "number",
+        "equity_pct_borough_efficient": "string",
+        "equity_pct_historical": "number"
+      },
+      "sha256": "60c5b1d03093b4490e468f40ec8194fcaf20a318d7c0b5c67e9628eac94810f8",
+      "size_bytes": 255,
+      "source_ids": [
+        "historical_reference"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "main Pareto panel",
+        "selected-policy summaries"
+      ],
+      "ordered_columns": [
+        "policy_id",
+        "budget_group",
+        "efficiency_total_cost_delay_median",
+        "allrequest_equity_delay_median",
+        "efficiency_std",
+        "equity_std",
+        "n_seeds",
+        "efficiency_sem",
+        "equity_sem",
+        "display_roles",
+        "map_policy_ids",
+        "efficiency_pct_borough_efficient",
+        "equity_pct_borough_efficient",
+        "selection_mean_efficiency",
+        "selection_mean_equity",
+        "selection_mean_nondominated",
+        "selection_efficiency_endpoint",
+        "selection_equity_endpoint",
+        "gamma_winner_labels",
+        "selection_memberships",
+        "efficiency_pct_historical",
+        "equity_pct_historical"
+      ],
+      "relative_path": "primary/inference_means.csv",
+      "row_count": 12,
+      "schema": {
+        "allrequest_equity_delay_median": "number",
+        "budget_group": "string",
+        "display_roles": "string",
+        "efficiency_pct_borough_efficient": "string",
+        "efficiency_pct_historical": "number",
+        "efficiency_sem": "number",
+        "efficiency_std": "number",
+        "efficiency_total_cost_delay_median": "number",
+        "equity_pct_borough_efficient": "string",
+        "equity_pct_historical": "number",
+        "equity_sem": "number",
+        "equity_std": "number",
+        "gamma_winner_labels": "string",
+        "map_policy_ids": "string",
+        "n_seeds": "integer",
+        "policy_id": "string",
+        "selection_efficiency_endpoint": "boolean",
+        "selection_equity_endpoint": "boolean",
+        "selection_mean_efficiency": "number",
+        "selection_mean_equity": "number",
+        "selection_mean_nondominated": "boolean",
+        "selection_memberships": "string"
+      },
+      "sha256": "039c40023f5d746232dca44b208679775b4bf8c37629380a630edd776b5ade95",
+      "size_bytes": 6321,
+      "source_ids": [
+        "inference_means"
+      ],
+      "transformation": "authenticated aggregate with final paper-role aliases normalized"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "cost maps"
+      ],
+      "ordered_columns": [
+        "role",
+        "vector_hash",
+        "n_tracts_with_cost",
+        "raw_pooled_quantile",
+        "pooled_quantile_level",
+        "shared_map_cap",
+        "display_cap_rounding",
+        "linear_colorbar_tick_count"
+      ],
+      "relative_path": "primary/map_scale_summary.csv",
+      "row_count": 7,
+      "schema": {
+        "display_cap_rounding": "string",
+        "linear_colorbar_tick_count": "integer",
+        "n_tracts_with_cost": "integer",
+        "pooled_quantile_level": "number",
+        "raw_pooled_quantile": "number",
+        "role": "string",
+        "shared_map_cap": "number",
+        "vector_hash": "string"
+      },
+      "sha256": "c52a9c3c91d2bd25d50ab622bc5e464398742ea6d5abf68b652f00926b2c9b7f",
+      "size_bytes": 1098,
+      "source_ids": [
+        "map_scale_source"
+      ],
+      "transformation": "project common map-scale fields and normalize final paper-role aliases"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "main Pareto panel"
+      ],
+      "ordered_columns": [
+        "setting_id",
+        "budget_group",
+        "arm_name",
+        "source_index",
+        "efficiency_total_cost",
+        "allrequest_equity",
+        "efficiency_ratio_historical",
+        "equity_ratio_historical",
+        "plot_search_nondominated"
+      ],
+      "relative_path": "primary/search_cloud.csv",
+      "row_count": 4608,
+      "schema": {
+        "allrequest_equity": "number",
+        "arm_name": "string",
+        "budget_group": "string",
+        "efficiency_ratio_historical": "number",
+        "efficiency_total_cost": "number",
+        "equity_ratio_historical": "number",
+        "plot_search_nondominated": "boolean",
+        "setting_id": "string",
+        "source_index": "integer"
+      },
+      "sha256": "e2873b9b70a46ec0e72c3a36b72776ce355c17f57da20336bef03e829835f2cd",
+      "size_bytes": 646451,
+      "source_ids": [
+        "search_cloud_source"
+      ],
+      "transformation": "project columns; divide historical percentages by 100"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "service-level appendix tables"
+      ],
+      "ordered_columns": [
+        "scope",
+        "role",
+        "policy_id",
+        "vector_hash",
+        "budget_group",
+        "display_role",
+        "borough",
+        "category",
+        "sla_days_mean",
+        "inspection_fraction_mean",
+        "sla_days_std",
+        "inspection_fraction_std",
+        "n_evaluations",
+        "sla_days_sem",
+        "inspection_fraction_sem"
+      ],
+      "relative_path": "primary/selected_policy_cells.csv",
+      "row_count": 210,
+      "schema": {
+        "borough": "string",
+        "budget_group": "string",
+        "category": "string",
+        "display_role": "string",
+        "inspection_fraction_mean": "number",
+        "inspection_fraction_sem": "number",
+        "inspection_fraction_std": "number",
+        "n_evaluations": "integer",
+        "policy_id": "string",
+        "role": "string",
+        "scope": "string",
+        "sla_days_mean": "number",
+        "sla_days_sem": "number",
+        "sla_days_std": "number",
+        "vector_hash": "string"
+      },
+      "sha256": "62f454fda029fe6b6fb9119808f4c12c42f6d9ef350754bf774206fe8586c154",
+      "size_bytes": 61521,
+      "source_ids": [
+        "cells_source",
+        "historical_cells"
+      ],
+      "transformation": "project inference cell moments, append historical 2019 cell outcomes, and normalize final paper-role aliases"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "policy parameter appendix"
+      ],
+      "ordered_columns": [
+        "role",
+        "policy_id",
+        "vector_hash",
+        "budget_group",
+        "display_role",
+        "paper_role",
+        "borough",
+        "category",
+        "borough_budget_share",
+        "inspection_priority_weight",
+        "per_review_retention_probability"
+      ],
+      "relative_path": "primary/selected_policy_parameters.csv",
+      "row_count": 180,
+      "schema": {
+        "borough": "string",
+        "borough_budget_share": "string",
+        "budget_group": "string",
+        "category": "string",
+        "display_role": "string",
+        "inspection_priority_weight": "number",
+        "paper_role": "string",
+        "per_review_retention_probability": "number",
+        "policy_id": "string",
+        "role": "string",
+        "vector_hash": "string"
+      },
+      "sha256": "07e6daab5c799383f1b51693b3f83b803ac4a76cc0213217b7396e245aad5e2d",
+      "size_bytes": 43493,
+      "source_ids": [
+        "parameters_source"
+      ],
+      "transformation": "project effective decoded decision parameters; remove representative realized outcomes; normalize final paper-role aliases"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "Table 1",
+        "out-of-sample robustness"
+      ],
+      "ordered_columns": [
+        "calendar_year",
+        "random_seed",
+        "display_role",
+        "policy_id",
+        "vector_hash",
+        "efficiency_loss",
+        "equity_loss",
+        "historical_efficiency_loss",
+        "historical_equity_loss",
+        "efficiency_ratio_historical",
+        "equity_ratio_historical"
+      ],
+      "relative_path": "primary/selected_policy_scores_by_seed.csv",
+      "row_count": 105,
+      "schema": {
+        "calendar_year": "integer",
+        "display_role": "string",
+        "efficiency_loss": "number",
+        "efficiency_ratio_historical": "number",
+        "equity_loss": "number",
+        "equity_ratio_historical": "number",
+        "historical_efficiency_loss": "integer",
+        "historical_equity_loss": "number",
+        "policy_id": "string",
+        "random_seed": "integer",
+        "vector_hash": "string"
+      },
+      "sha256": "1e82ea8ffab6fab0913526a77f289d7a652cfa277d6494ceed76c33dd278c123",
+      "size_bytes": 26291,
+      "source_ids": [
+        "inference_scores",
+        "oos_scores",
+        "table_metadata"
+      ],
+      "transformation": "filter three fixed Borough policies and normalize within calendar year"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "main Pareto panel"
+      ],
+      "ordered_columns": [
+        "setting_id",
+        "policy_id",
+        "budget_group",
+        "efficiency_total_cost",
+        "allrequest_equity",
+        "decoded_policy_hash",
+        "policy_vector_hash",
+        "replication_count",
+        "evidence_layer",
+        "efficiency_pct_borough_efficient",
+        "equity_pct_borough_efficient",
+        "efficiency_pct_historical",
+        "equity_pct_historical"
+      ],
+      "relative_path": "primary/selection_means.csv",
+      "row_count": 538,
+      "schema": {
+        "allrequest_equity": "number",
+        "budget_group": "string",
+        "decoded_policy_hash": "string",
+        "efficiency_pct_borough_efficient": "string",
+        "efficiency_pct_historical": "number",
+        "efficiency_total_cost": "number",
+        "equity_pct_borough_efficient": "string",
+        "equity_pct_historical": "number",
+        "evidence_layer": "string",
+        "policy_id": "string",
+        "policy_vector_hash": "string",
+        "replication_count": "integer",
+        "setting_id": "string"
+      },
+      "sha256": "379a4c2cebbaf9e892b3d78cf4084692c46344bd37554d9e301647990f69e73f",
+      "size_bytes": 187443,
+      "source_ids": [
+        "selection_means"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "cost maps"
+      ],
+      "ordered_columns": [
+        "role",
+        "policy_id",
+        "vector_hash",
+        "GEOID",
+        "cost_delay",
+        "cost_drop",
+        "total_cost"
+      ],
+      "relative_path": "primary/tract_policy_costs.csv",
+      "row_count": 15897,
+      "schema": {
+        "GEOID": "string",
+        "cost_delay": "number",
+        "cost_drop": "number",
+        "policy_id": "string",
+        "role": "string",
+        "total_cost": "number",
+        "vector_hash": "string"
+      },
+      "sha256": "3e1436b44fe3d7b1006929f0575e1d8731530c44ddda4c9c652a09941fae8efe",
+      "size_bytes": 2886622,
+      "source_ids": [
+        "historical_tract_costs",
+        "historical_metadata",
+        "borough_efficient_tract_costs",
+        "borough_efficient_metadata",
+        "borough_balanced_tract_costs",
+        "borough_balanced_metadata",
+        "borough_equitable_tract_costs",
+        "borough_equitable_metadata",
+        "city_efficient_tract_costs",
+        "city_efficient_metadata",
+        "city_balanced_tract_costs",
+        "city_balanced_metadata",
+        "city_equitable_tract_costs",
+        "city_equitable_metadata"
+      ],
+      "transformation": "sum category-level delay and dropped-request costs within role and census tract; normalize final paper-role aliases"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "App. Fig. 10"
+      ],
+      "ordered_columns": [
+        "setting_id",
+        "drop_cost",
+        "objective",
+        "efficiency_historical",
+        "allrequest_equity_historical",
+        "historical_x",
+        "historical_y"
+      ],
+      "relative_path": "robustness/appendix_reoptimized_frontier_historical_reference.csv",
+      "row_count": 4,
+      "schema": {
+        "allrequest_equity_historical": "number",
+        "drop_cost": "number",
+        "efficiency_historical": "number",
+        "historical_x": "number",
+        "historical_y": "number",
+        "objective": "string",
+        "setting_id": "string"
+      },
+      "sha256": "678dfca753dca0cee7c07ca5c3bd5b2fcc86bce5f5b529018adf66988c1b04dd",
+      "size_bytes": 411,
+      "source_ids": [
+        "appendix_frontier_historical_reference"
+      ],
+      "transformation": "column-selected authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "App. Fig. 10"
+      ],
+      "ordered_columns": [
+        "setting_id",
+        "policy_id",
+        "budget_group",
+        "n_seeds",
+        "objective",
+        "efficiency_ratio_historical",
+        "equity_ratio_historical"
+      ],
+      "relative_path": "robustness/appendix_reoptimized_frontier_inference_means.csv",
+      "row_count": 61,
+      "schema": {
+        "budget_group": "string",
+        "efficiency_ratio_historical": "number",
+        "equity_ratio_historical": "number",
+        "n_seeds": "integer",
+        "objective": "string",
+        "policy_id": "string",
+        "setting_id": "string"
+      },
+      "sha256": "89be119ff89440794cf05deeea0d8c6139c078d8598361c1799f62b87213ab36",
+      "size_bytes": 8288,
+      "source_ids": [
+        "appendix_frontier_inference_means"
+      ],
+      "transformation": "column-selected authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "App. Fig. 10"
+      ],
+      "ordered_columns": [
+        "setting_id",
+        "budget_group",
+        "policy_id",
+        "efficiency_ratio_historical",
+        "equity_ratio_historical"
+      ],
+      "relative_path": "robustness/appendix_reoptimized_frontier_search.csv",
+      "row_count": 21440,
+      "schema": {
+        "budget_group": "string",
+        "efficiency_ratio_historical": "number",
+        "equity_ratio_historical": "number",
+        "policy_id": "string",
+        "setting_id": "string"
+      },
+      "sha256": "5ea4c96ae52c002ea24f480d4bb2ceb918ed397d57d245a5700787258836fbdd",
+      "size_bytes": 1868471,
+      "source_ids": [
+        "appendix_frontier_search"
+      ],
+      "transformation": "column-selected authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "capacity robustness appendix"
+      ],
+      "ordered_columns": [
+        "budget_group",
+        "locked_support_policy_count",
+        "primary_nondominated_count",
+        "capacity125_nondominated_count",
+        "capacity125_efficiency_span_pct_points",
+        "capacity125_equity_span_pct_points",
+        "capacity125_efficiency_endpoint_policy_id",
+        "capacity125_equity_endpoint_policy_id",
+        "capacity125_endpoints_coincide",
+        "mean_request_weighted_inspection_change",
+        "minimum_request_weighted_inspection_change",
+        "maximum_request_weighted_inspection_change",
+        "minimum_cell_service_at_capacity125",
+        "mean_cell_service_at_capacity125",
+        "interpretation",
+        "full_capacity125_BO_authorized"
+      ],
+      "relative_path": "robustness/capacity125_diagnostic.csv",
+      "row_count": 2,
+      "schema": {
+        "budget_group": "string",
+        "capacity125_efficiency_endpoint_policy_id": "string",
+        "capacity125_efficiency_span_pct_points": "number",
+        "capacity125_endpoints_coincide": "string",
+        "capacity125_equity_endpoint_policy_id": "string",
+        "capacity125_equity_span_pct_points": "number",
+        "capacity125_nondominated_count": "integer",
+        "full_capacity125_BO_authorized": "boolean",
+        "interpretation": "string",
+        "locked_support_policy_count": "integer",
+        "maximum_request_weighted_inspection_change": "number",
+        "mean_cell_service_at_capacity125": "number",
+        "mean_request_weighted_inspection_change": "number",
+        "minimum_cell_service_at_capacity125": "number",
+        "minimum_request_weighted_inspection_change": "number",
+        "primary_nondominated_count": "integer"
+      },
+      "sha256": "8195d27ecfe020aa263fd20a121bd9ec26c8e851bf95979e6e14a624739dd517",
+      "size_bytes": 1206,
+      "source_ids": [
+        "capacity_diagnostic"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "capacity robustness appendix"
+      ],
+      "ordered_columns": [
+        "period_primary",
+        "policy_id",
+        "budget_group",
+        "efficiency_mean_primary",
+        "allrequest_equity_mean_primary",
+        "efficiency_std_primary",
+        "equity_std_primary",
+        "n_seeds_primary",
+        "efficiency_sem_primary",
+        "allrequest_equity_sem_primary",
+        "objective_primary",
+        "total_requests_primary",
+        "inspected_requests_primary",
+        "request_weighted_frac_inspected_primary",
+        "min_frac_inspected_primary",
+        "mean_frac_inspected_primary",
+        "low_service_cells_primary",
+        "period_capacity125",
+        "efficiency_mean_capacity125",
+        "allrequest_equity_mean_capacity125",
+        "efficiency_std_capacity125",
+        "equity_std_capacity125",
+        "n_seeds_capacity125",
+        "efficiency_sem_capacity125",
+        "allrequest_equity_sem_capacity125",
+        "objective_capacity125",
+        "total_requests_capacity125",
+        "inspected_requests_capacity125",
+        "request_weighted_frac_inspected_capacity125",
+        "min_frac_inspected_capacity125",
+        "mean_frac_inspected_capacity125",
+        "low_service_cells_capacity125",
+        "efficiency_pct_primary",
+        "equity_pct_primary",
+        "efficiency_pct_capacity125",
+        "equity_pct_capacity125",
+        "request_weighted_frac_inspected_change",
+        "minimum_service_fraction_change",
+        "mean_service_fraction_change",
+        "coverage_interpretation"
+      ],
+      "relative_path": "robustness/capacity125_policy_means.csv",
+      "row_count": 12,
+      "schema": {
+        "allrequest_equity_mean_capacity125": "number",
+        "allrequest_equity_mean_primary": "number",
+        "allrequest_equity_sem_capacity125": "number",
+        "allrequest_equity_sem_primary": "number",
+        "budget_group": "string",
+        "coverage_interpretation": "string",
+        "efficiency_mean_capacity125": "number",
+        "efficiency_mean_primary": "number",
+        "efficiency_pct_capacity125": "number",
+        "efficiency_pct_primary": "number",
+        "efficiency_sem_capacity125": "number",
+        "efficiency_sem_primary": "number",
+        "efficiency_std_capacity125": "number",
+        "efficiency_std_primary": "number",
+        "equity_pct_capacity125": "number",
+        "equity_pct_primary": "number",
+        "equity_std_capacity125": "number",
+        "equity_std_primary": "number",
+        "inspected_requests_capacity125": "number",
+        "inspected_requests_primary": "number",
+        "low_service_cells_capacity125": "number",
+        "low_service_cells_primary": "number",
+        "mean_frac_inspected_capacity125": "number",
+        "mean_frac_inspected_primary": "number",
+        "mean_service_fraction_change": "number",
+        "min_frac_inspected_capacity125": "number",
+        "min_frac_inspected_primary": "number",
+        "minimum_service_fraction_change": "number",
+        "n_seeds_capacity125": "integer",
+        "n_seeds_primary": "integer",
+        "objective_capacity125": "string",
+        "objective_primary": "string",
+        "period_capacity125": "integer",
+        "period_primary": "integer",
+        "policy_id": "string",
+        "request_weighted_frac_inspected_capacity125": "number",
+        "request_weighted_frac_inspected_change": "number",
+        "request_weighted_frac_inspected_primary": "number",
+        "total_requests_capacity125": "number",
+        "total_requests_primary": "number"
+      },
+      "sha256": "d575f22478818eb7569de299aa6f4fada6a5aa1b2915ecf6b3c6d2aa2d3f3263",
+      "size_bytes": 9248,
+      "source_ids": [
+        "capacity_means"
+      ],
+      "transformation": "coverage_interpretation normalized to a standalone fixed-support diagnostic label; numeric data unchanged"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "supporting D=100/D=200 comparison table",
+        "D=100/D=200 cell-change counts"
+      ],
+      "ordered_columns": [
+        "d100_setting_id",
+        "d200_setting_id",
+        "policy_role",
+        "budget_group",
+        "display_role",
+        "Borough",
+        "Category",
+        "d100_source_policy_id",
+        "d100_vector_hash",
+        "d100_n_inference_seeds",
+        "d100_realized_inspection_fraction",
+        "d200_source_policy_id",
+        "d200_vector_hash",
+        "d200_n_inference_seeds",
+        "d200_realized_inspection_fraction",
+        "inspection_fraction_change_d200_minus_d100",
+        "historical_inspection_fraction"
+      ],
+      "relative_path": "robustness/d100_d200_median_cell_service_comparison.csv",
+      "row_count": 180,
+      "schema": {
+        "Borough": "string",
+        "Category": "string",
+        "budget_group": "string",
+        "d100_n_inference_seeds": "integer",
+        "d100_realized_inspection_fraction": "number",
+        "d100_setting_id": "string",
+        "d100_source_policy_id": "string",
+        "d100_vector_hash": "string",
+        "d200_n_inference_seeds": "integer",
+        "d200_realized_inspection_fraction": "number",
+        "d200_setting_id": "string",
+        "d200_source_policy_id": "string",
+        "d200_vector_hash": "string",
+        "display_role": "string",
+        "historical_inspection_fraction": "number",
+        "inspection_fraction_change_d200_minus_d100": "number",
+        "policy_role": "string"
+      },
+      "sha256": "7004164b5c8add225e194d4ce964cf0df94ab272c860d9ab80d1980d7eb7c08f",
+      "size_bytes": 77733,
+      "source_ids": [
+        "d100_d200_median_cell_comparison",
+        "d200_cell_history"
+      ],
+      "transformation": "column-selected role-matched comparison with historical inspection fraction merged by cell; normalize final paper-role aliases"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "priority-weight robustness appendix"
+      ],
+      "ordered_columns": [
+        "BoroughCode",
+        "SRCategory",
+        "recorded_risk_mean",
+        "RiskRating"
+      ],
+      "relative_path": "robustness/observed_recorded_risk_weights.csv",
+      "row_count": 30,
+      "schema": {
+        "BoroughCode": "string",
+        "RiskRating": "number",
+        "SRCategory": "string",
+        "recorded_risk_mean": "number"
+      },
+      "sha256": "49e7ef9198c2cac72470ec24e759a878a90b07203848a7c3cf0f433992590680",
+      "size_bytes": 1752,
+      "source_ids": [
+        "observed_risk_weights"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "20 percent minimum-service finite-support diagnostic"
+      ],
+      "ordered_columns": [
+        "policy_id",
+        "budget_group",
+        "BoroughCode",
+        "SRCategory",
+        "inspection_fraction_mean",
+        "inspection_fraction_std",
+        "n_selection_seeds",
+        "inspection_fraction_sem",
+        "selection_seed_start",
+        "selection_seed_end"
+      ],
+      "relative_path": "robustness/policy_cell_selection_means.csv",
+      "row_count": 16140,
+      "schema": {
+        "BoroughCode": "string",
+        "SRCategory": "string",
+        "budget_group": "string",
+        "inspection_fraction_mean": "number",
+        "inspection_fraction_sem": "number",
+        "inspection_fraction_std": "number",
+        "n_selection_seeds": "integer",
+        "policy_id": "string",
+        "selection_seed_end": "integer",
+        "selection_seed_start": "integer"
+      },
+      "sha256": "a356225688f666559ca2dc188bce89e3a4b754cb70ad1f25f9fdf1f55ba31022",
+      "size_bytes": 2531646,
+      "source_ids": [
+        "min20_policy_cell_selection_means"
+      ],
+      "transformation": "byte-for-byte authenticated per-policy cell means over selection seeds 311--320"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "priority-weight robustness appendix"
+      ],
+      "ordered_columns": [
+        "weight_id",
+        "weight_label",
+        "weight_family",
+        "power_exponent",
+        "display_role",
+        "policy_label",
+        "policy_id",
+        "weight_Hazard",
+        "weight_Illegal Tree Damage",
+        "weight_Remove Tree",
+        "weight_Other",
+        "weight_Prune",
+        "weight_Root/Sewer/Sidewalk",
+        "efficiency_relative_to_historical",
+        "efficiency_sem_relative_to_historical",
+        "equity_relative_to_historical",
+        "equity_sem_relative_to_historical",
+        "improves_efficiency",
+        "improves_equity",
+        "improves_both"
+      ],
+      "relative_path": "robustness/priority_weight_named_scores.csv",
+      "row_count": 27,
+      "schema": {
+        "display_role": "string",
+        "efficiency_relative_to_historical": "number",
+        "efficiency_sem_relative_to_historical": "number",
+        "equity_relative_to_historical": "number",
+        "equity_sem_relative_to_historical": "number",
+        "improves_both": "boolean",
+        "improves_efficiency": "boolean",
+        "improves_equity": "boolean",
+        "policy_id": "string",
+        "policy_label": "string",
+        "power_exponent": "number",
+        "weight_Hazard": "number",
+        "weight_Illegal Tree Damage": "number",
+        "weight_Other": "number",
+        "weight_Prune": "number",
+        "weight_Remove Tree": "number",
+        "weight_Root/Sewer/Sidewalk": "string",
+        "weight_family": "string",
+        "weight_id": "string",
+        "weight_label": "string"
+      },
+      "sha256": "6399dce7fd5cf170dd82d0b4a40c097b184ffbadf72222a5b3849d82e3c06a50",
+      "size_bytes": 8916,
+      "source_ids": [
+        "priority_named"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "priority-weight robustness appendix"
+      ],
+      "ordered_columns": [
+        "display_role",
+        "policy_label",
+        "metric",
+        "draw_count",
+        "minimum",
+        "maximum",
+        "mean",
+        "share_below_historical",
+        "share_improves_both",
+        "p01",
+        "p05",
+        "p25",
+        "p50",
+        "p75",
+        "p95",
+        "p99"
+      ],
+      "relative_path": "robustness/priority_weight_random_summary.csv",
+      "row_count": 6,
+      "schema": {
+        "display_role": "string",
+        "draw_count": "integer",
+        "maximum": "number",
+        "mean": "number",
+        "metric": "string",
+        "minimum": "number",
+        "p01": "number",
+        "p05": "number",
+        "p25": "number",
+        "p50": "number",
+        "p75": "number",
+        "p95": "number",
+        "p99": "number",
+        "policy_label": "string",
+        "share_below_historical": "number",
+        "share_improves_both": "number"
+      },
+      "sha256": "60099efbe4cb446e70adc040748dd4b590d9be06a1c1b429cbc8ebaf4e9cf054",
+      "size_bytes": 1594,
+      "source_ids": [
+        "priority_random_summary"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "priority-weight robustness appendix"
+      ],
+      "ordered_columns": [
+        "weight_id",
+        "weight_label",
+        "weight_family",
+        "power_exponent",
+        "Hazard",
+        "Illegal Tree Damage",
+        "Remove Tree",
+        "Other",
+        "Prune",
+        "Root/Sewer/Sidewalk"
+      ],
+      "relative_path": "robustness/priority_weight_specifications.csv",
+      "row_count": 8,
+      "schema": {
+        "Hazard": "number",
+        "Illegal Tree Damage": "number",
+        "Other": "number",
+        "Prune": "number",
+        "Remove Tree": "number",
+        "Root/Sewer/Sidewalk": "string",
+        "power_exponent": "number",
+        "weight_family": "string",
+        "weight_id": "string",
+        "weight_label": "string"
+      },
+      "sha256": "65ffcec776db23f2058a26cf991ef2decda8cbce8d3798cc9873fc15d3969373",
+      "size_bytes": 1229,
+      "source_ids": [
+        "priority_specs"
+      ],
+      "transformation": "byte-for-byte authenticated aggregate"
+    },
+    {
+      "contains_request_identifiers": false,
+      "manuscript_consumers": [
+        "priority-weight robustness appendix"
+      ],
+      "ordered_columns": [
+        "setting_id",
+        "budget_group",
+        "display_role",
+        "policy_id",
+        "selection_only",
+        "author_selected",
+        "status",
+        "inference_support"
+      ],
+      "relative_path": "robustness/selected_borough_roles.csv",
+      "row_count": 3,
+      "schema": {
+        "author_selected": "boolean",
+        "budget_group": "string",
+        "display_role": "string",
+        "inference_support": "string",
+        "policy_id": "string",
+        "selection_only": "boolean",
+        "setting_id": "string",
+        "status": "string"
+      },
+      "sha256": "1b61f6ada757b9836c3f5cce61ec1d9b08aab2b0f968dfa8a80598db83d2e71a",
+      "size_bytes": 700,
+      "source_ids": [
+        "selected_borough_roles"
+      ],
+      "transformation": "author-confirmed final paper-role metadata derived from authenticated selection support"
+    }
+  ],
+  "schema": "sla-public-paper-data-manifest-v1",
+  "source_snapshot_date": "2026-08-10"
+}

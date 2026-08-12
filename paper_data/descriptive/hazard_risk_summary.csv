@@ -1,0 +1,6 @@
+BoroughCode,row_count,unique_service_requests,mean_risk_rating,median_risk_rating,min_risk_rating,max_risk_rating,repeated_rows
+Bronx,6109,5139,6.959076771975774,7.0,0.0,12.0,970
+Brooklyn,20854,19289,6.819794763594515,7.0,3.0,12.0,1565
+Manhattan,4625,3791,7.006486486486486,7.0,3.0,12.0,834
+Queens,37160,26083,7.361006458557589,7.0,3.0,12.0,11077
+Staten Island,6792,5353,7.436101295641932,8.0,3.0,12.0,1439

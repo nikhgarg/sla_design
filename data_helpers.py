@@ -1,15 +1,28 @@
 import pandas as pd
 import numpy as np
 import os
+import hashlib
+
+
+def _require_hash(path, expected):
+    digest = hashlib.sha256()
+    with open(path, 'rb') as handle:
+        for block in iter(lambda: handle.read(1024 * 1024), b''):
+            digest.update(block)
+    if digest.hexdigest() != expected:
+        raise ValueError(f'Input hash mismatch: {path}')
 
 def read_raw_and_filter(sr_file = 'data_raw/Forestry_Service_Requests_20231201.csv',
                         ins_file = 'data_raw/Forestry_Inspections_20231201.csv',
-                        merge_low_categories = True):
+                        merge_low_categories = True,
+                        force_rebuild = False,
+                        expected_cache_hash = None):
     '''
     Read raw data and filter out unneeded columns.
     '''
-    if f'merged_data_merge{merge_low_categories}.csv' in os.listdir('data_clean'):
-        insmerge = pd.read_csv(f'data_clean/merged_data_merge{merge_low_categories}.csv')
+    cache_path = f'data_clean/merged_data_merge{merge_low_categories}.csv'
+    if os.path.isfile(cache_path) and not force_rebuild:
+        insmerge = pd.read_csv(cache_path)
         insmerge.CreatedDate = pd.to_datetime(insmerge.CreatedDate).dt.date
         insmerge.InspectionDate = pd.to_datetime(insmerge.InspectionDate).dt.date
         return insmerge
@@ -30,7 +43,15 @@ def read_raw_and_filter(sr_file = 'data_raw/Forestry_Service_Requests_20231201.c
     if merge_low_categories:
         insmerge['SRCategory'] = np.where(insmerge['SRCategory'].isin(['Rescue/Preservation', 'Remove Stump', 'Remove Debris', 'Pest/Disease', 'Claims', 'Planting Space']), 'Other', insmerge['SRCategory'])
     
-    insmerge.to_csv(f'data_clean/merged_data_merge{merge_low_categories}.csv', index = False)
+    temporary_path = f'{cache_path}.{os.getpid()}.tmp'
+    try:
+        insmerge.to_csv(temporary_path, index = False)
+        if expected_cache_hash is not None:
+            _require_hash(temporary_path, expected_cache_hash)
+        os.replace(temporary_path, cache_path)
+    finally:
+        if os.path.exists(temporary_path):
+            os.remove(temporary_path)
 
     return insmerge
 

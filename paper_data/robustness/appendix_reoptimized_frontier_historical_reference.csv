@@ -1,0 +1,5 @@
+setting_id,drop_cost,objective,efficiency_historical,allrequest_equity_historical,historical_x,historical_y
+d100_delay_median_cap1,100.0,delay_median,16419478.0,1160.1949292345923,1.0,1.0
+d100_delay_75_cap1,100.0,delay_75,30958945.0,2456.598622044482,1.0,1.0
+d200_delay_median_cap1,200.0,delay_median,30090078.0,2468.4799375730636,1.0,1.0
+d200_delay_75_cap1,200.0,delay_75,44629545.0,2928.7370660265715,1.0,1.0

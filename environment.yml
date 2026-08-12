@@ -232,4 +232,3 @@ dependencies:
       - joblib==1.3.2
       - scikit-learn==1.4.1.post1
       - threadpoolctl==3.3.0
-prefix: /home/zhi/miniconda3/envs/sla

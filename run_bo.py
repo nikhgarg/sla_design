@@ -1,6 +1,7 @@
 import os
 import torch
 import argparse
+from pathlib import Path
 
 
 tkwargs = {
@@ -10,6 +11,8 @@ tkwargs = {
 SMOKE_TEST = os.environ.get("SMOKE_TEST")
 
 from bo_problem import *
+from data_helpers import read_raw_and_filter
+from evaluate_selected_policy import INPUT_SHA256, preflight_data
 
 from botorch.models.gp_regression import FixedNoiseGP, SingleTaskGP
 from botorch.models.model_list_gp_regression import ModelListGP
@@ -47,23 +50,52 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--batch_size", type=int, default=4)
     parser.add_argument("--n_steps", type=int, default=10)
-    parser.add_argument("--city_budget", type=int, default=1)
-    parser.add_argument("--byborough_policy", type=int, default=1)
-    parser.add_argument("--drop_by_age", type=int, default=0)
+    parser.add_argument("--city_budget", type=int, choices=(0, 1), default=1)
+    parser.add_argument("--byborough_policy", type=int, choices=(0, 1), default=1)
+    parser.add_argument("--drop_by_age", type=int, choices=(0, 1), default=0)
     parser.add_argument("--drop_age", type=int, default=100)
-    parser.add_argument("--verbose", type=int, default=1)
+    parser.add_argument("--verbose", type=int, choices=(0, 1), default=1)
     parser.add_argument("--drop_cost", type=int, default=100)
+    parser.add_argument("--rho", type=float, default=0.15)
     parser.add_argument("--obj", type=str, default="delay_median")
-    parser.add_argument("--equity", type=str, default="varsla") # equity is measured in either the max cost of borough or the weighted maximal difference in SLAs ("varsla")
+    parser.add_argument("--equity", type=str, default="allrequest")
 
     args = parser.parse_args()
+    if args.batch_size <= 0:
+        parser.error("--batch_size must be positive")
+    if args.n_steps <= 0:
+        parser.error("--n_steps must be positive")
+    if not 0 <= args.rho <= 1:
+        parser.error("--rho must lie in [0, 1]")
+    if args.drop_cost < 0:
+        parser.error("--drop_cost must be nonnegative")
+    if args.drop_age < 0:
+        parser.error("--drop_age must be nonnegative")
+    if not args.city_budget and not args.byborough_policy:
+        parser.error("Borough-budget policies require --byborough_policy 1")
+    if args.city_budget and args.drop_by_age:
+        parser.error("City-budget policies do not support --drop_by_age 1")
 
-    problem = parks_simulation(city_budget=args.city_budget,
-                                byborough_policy=args.byborough_policy,
-                                drop_by_age=args.drop_by_age,
+    if preflight_data(Path('.')) == "archived_raw_snapshots":
+        read_raw_and_filter(
+            force_rebuild=True,
+            expected_cache_hash=INPUT_SHA256[
+                "data_clean/merged_data_mergeTrue.csv"
+            ],
+        )
+
+    problem = parks_simulation(city_budget=bool(args.city_budget),
+                                byborough_policy=bool(args.byborough_policy),
+                                drop_by_age=bool(args.drop_by_age),
                                 drop_age=args.drop_age,
                                 obj=args.obj,
-                                equity=args.equity)
+                                drop_cost=args.drop_cost,
+                                equity=args.equity,
+                                fcfs_violation=args.rho)
+
+    run_tag = f"citybudget{args.city_budget}_boroughpolicy{args.byborough_policy}_dropbyage{args.drop_by_age}_dropage{args.drop_age}_dropcost{args.drop_cost}_rho{args.rho:g}_objcol{args.obj}_equity{args.equity}"
+    train_x_path = f"./botorch_log/train_x_qnehvi_{run_tag}.pt"
+    train_obj_path = f"./botorch_log/train_obj_qnehvi_{run_tag}.pt"
 
 
     BATCH_SIZE = args.batch_size
@@ -130,14 +162,14 @@ if __name__ == "__main__":
 
 
 
-    verbose = True
+    verbose = bool(args.verbose)
 
     hvs_qnehvi = []
     print(f"Running qNEHVI with {BATCH_SIZE} initial points on {problem.dim} objectives")
 
-    if os.path.exists(f"./botorch_log/train_x_qnehvi_citybudget{args.city_budget}_boroughpolicy{args.byborough_policy}_dropbyage{args.drop_by_age}_dropcost{args.drop_cost}_objcol{args.obj}_equity{args.equity}.pt"):
-        train_x_qnehvi = torch.load(f"./botorch_log/train_x_qnehvi_citybudget{args.city_budget}_boroughpolicy{args.byborough_policy}_dropbyage{args.drop_by_age}_dropcost{args.drop_cost}_objcol{args.obj}_equity{args.equity}.pt")
-        train_obj_qnehvi = torch.load(f"./botorch_log/train_obj_qnehvi_citybudget{args.city_budget}_boroughpolicy{args.byborough_policy}_dropbyage{args.drop_by_age}_dropcost{args.drop_cost}_objcol{args.obj}_equity{args.equity}.pt")
+    if os.path.exists(train_x_path):
+        train_x_qnehvi = torch.load(train_x_path)
+        train_obj_qnehvi = torch.load(train_obj_path)
     else:
         print(f"Getting initial sample of {BATCH_SIZE}...", flush=True)
         # call helper functions to generate initial training data and initialize model
@@ -165,8 +197,11 @@ if __name__ == "__main__":
         # fit the models
         try:
             fit_gpytorch_mll(mll_qnehvi)
-        except:
-            continue
+        except Exception as exc:
+            raise RuntimeError(
+                f"GP model fitting failed at iteration {iteration}; "
+                "no new observations were added"
+            ) from exc
 
         print(f"\nModel {iteration} fitted", flush=True)
 
@@ -194,8 +229,8 @@ if __name__ == "__main__":
 
         # save train_x_qnehvi, train_obj_qnehvi
         
-        torch.save(train_x_qnehvi, f"./botorch_log/train_x_qnehvi_citybudget{args.city_budget}_boroughpolicy{args.byborough_policy}_dropbyage{args.drop_by_age}_dropcost{args.drop_cost}_objcol{args.obj}_equity{args.equity}.pt")
-        torch.save(train_obj_qnehvi, f"./botorch_log/train_obj_qnehvi_citybudget{args.city_budget}_boroughpolicy{args.byborough_policy}_dropbyage{args.drop_by_age}_dropcost{args.drop_cost}_objcol{args.obj}_equity{args.equity}.pt")
+        torch.save(train_x_qnehvi, train_x_path)
+        torch.save(train_obj_qnehvi, train_obj_path)
         
         ref_point = train_obj_qnehvi.min(dim=0)[0] - 0.05
         best_solution = train_obj_qnehvi.max(dim=0)[0]

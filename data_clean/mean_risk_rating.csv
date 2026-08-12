@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:90c22c73613ab73983826f0f6a3144863b6e72250836550c861a270be51e96c3
-size 790
+BoroughCode,SRCategory,RiskRating
+Bronx,Hazard,10.0
+Bronx,Illegal Tree Damage,8.0
+Bronx,Other,6.0
+Bronx,Prune,4.0
+Bronx,Remove Tree,8.0
+Bronx,Root/Sewer/Sidewalk,4.0
+Brooklyn,Hazard,10.0
+Brooklyn,Illegal Tree Damage,8.0
+Brooklyn,Other,6.0
+Brooklyn,Prune,4.0
+Brooklyn,Remove Tree,8.0
+Brooklyn,Root/Sewer/Sidewalk,4.0
+Manhattan,Hazard,10.0
+Manhattan,Illegal Tree Damage,8.0
+Manhattan,Other,6.0
+Manhattan,Prune,4.0
+Manhattan,Remove Tree,8.0
+Manhattan,Root/Sewer/Sidewalk,4.0
+Queens,Hazard,10.0
+Queens,Illegal Tree Damage,8.0
+Queens,Other,6.0
+Queens,Prune,4.0
+Queens,Remove Tree,8.0
+Queens,Root/Sewer/Sidewalk,4.0
+Staten Island,Hazard,10.0
+Staten Island,Illegal Tree Damage,8.0
+Staten Island,Other,6.0
+Staten Island,Prune,4.0
+Staten Island,Remove Tree,8.0
+Staten Island,Root/Sewer/Sidewalk,4.0

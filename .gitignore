@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+/build/
+/.ipynb_checkpoints/
+/botorch_log/*.pt
+/simulation_log/*.csv
+/example_policy/
+*Zone.Identifier
+/data_clean/merged_data_merge*.csv

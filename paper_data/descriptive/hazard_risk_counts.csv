@@ -1,0 +1,66 @@
+BoroughCode,risk_rating,row_count
+Bronx,0,6
+Bronx,1,0
+Bronx,2,0
+Bronx,3,469
+Bronx,4,130
+Bronx,5,339
+Bronx,6,1198
+Bronx,7,1656
+Bronx,8,1118
+Bronx,9,851
+Bronx,10,273
+Bronx,11,50
+Bronx,12,19
+Brooklyn,0,0
+Brooklyn,1,0
+Brooklyn,2,0
+Brooklyn,3,864
+Brooklyn,4,655
+Brooklyn,5,1756
+Brooklyn,6,4776
+Brooklyn,7,6028
+Brooklyn,8,4392
+Brooklyn,9,1776
+Brooklyn,10,452
+Brooklyn,11,124
+Brooklyn,12,31
+Manhattan,0,0
+Manhattan,1,0
+Manhattan,2,0
+Manhattan,3,182
+Manhattan,4,123
+Manhattan,5,341
+Manhattan,6,1120
+Manhattan,7,1066
+Manhattan,8,1044
+Manhattan,9,507
+Manhattan,10,150
+Manhattan,11,39
+Manhattan,12,53
+Queens,0,0
+Queens,1,0
+Queens,2,0
+Queens,3,1740
+Queens,4,744
+Queens,5,1791
+Queens,6,5609
+Queens,7,8998
+Queens,8,8537
+Queens,9,6616
+Queens,10,2571
+Queens,11,454
+Queens,12,100
+Staten Island,0,0
+Staten Island,1,0
+Staten Island,2,0
+Staten Island,3,351
+Staten Island,4,80
+Staten Island,5,297
+Staten Island,6,983
+Staten Island,7,1480
+Staten Island,8,1755
+Staten Island,9,1267
+Staten Island,10,445
+Staten Island,11,111
+Staten Island,12,23

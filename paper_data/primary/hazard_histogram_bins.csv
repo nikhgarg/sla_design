@@ -1,0 +1,316 @@
+borough,role,bin_index,bin_left_days,bin_right_days,bin_label,inspected_delay_count,terminal_uninspected_count,display_count,all_request_count,display_share_percent
+Bronx,borough_most_efficient,0,0,1,0 to <1 days,3892,0,3892,7602,51.197053406998158
+Bronx,borough_most_efficient,1,1,2,1 to <2 days,1572,0,1572,7602,20.678768745067089
+Bronx,borough_most_efficient,2,2,3,2 to <3 days,777,0,777,7602,10.220994475138122
+Bronx,borough_most_efficient,3,3,4,3 to <4 days,276,0,276,7602,3.6306235201262824
+Bronx,borough_most_efficient,4,4,5,4 to <5 days,177,0,177,7602,2.3283346487766376
+Bronx,borough_most_efficient,5,5,6,5 to <6 days,142,0,142,7602,1.8679294922388845
+Bronx,borough_most_efficient,6,6,7,6 to <7 days,121,0,121,7602,1.5916863983162326
+Bronx,borough_most_efficient,7,7,8,7 to <8 days,88,0,88,7602,1.1575901078663509
+Bronx,borough_most_efficient,8,8,9,8 to <9 days,58,0,58,7602,0.7629571165482768
+Bronx,borough_most_efficient,9,9,10,9 to <10 days,50,0,50,7602,0.65772165219679035
+Bronx,borough_most_efficient,10,10,11,10 to <11 days,43,0,43,7602,0.56564062088923972
+Bronx,borough_most_efficient,11,11,12,11 to <12 days,46,0,46,7602,0.60510392002104707
+Bronx,borough_most_efficient,12,12,13,12 to <13 days,16,0,16,7602,0.2104709287029729
+Bronx,borough_most_efficient,13,13,14,13 to <14 days,8,0,8,7602,0.10523546435148645
+Bronx,borough_most_efficient,14,14,15,14 to <15 days,0,0,0,7602,0
+Bronx,borough_most_efficient,15,15,16,15 to <16 days,0,0,0,7602,0
+Bronx,borough_most_efficient,16,16,17,16 to <17 days,0,0,0,7602,0
+Bronx,borough_most_efficient,17,17,18,17 to <18 days,0,0,0,7602,0
+Bronx,borough_most_efficient,18,18,19,18 to <19 days,0,0,0,7602,0
+Bronx,borough_most_efficient,19,19,20,19 to <20 days,0,0,0,7602,0
+Bronx,borough_most_efficient,20,20,,>=20 days or not inspected,0,336,336,7602,4.4198895027624312
+Brooklyn,borough_most_efficient,0,0,1,0 to <1 days,12428,0,12428,26091,47.633283507722972
+Brooklyn,borough_most_efficient,1,1,2,1 to <2 days,6300,0,6300,26091,24.146257330113833
+Brooklyn,borough_most_efficient,2,2,3,2 to <3 days,2982,0,2982,26091,11.429228469587214
+Brooklyn,borough_most_efficient,3,3,4,3 to <4 days,1918,0,1918,26091,7.3511938982791003
+Brooklyn,borough_most_efficient,4,4,5,4 to <5 days,1369,0,1369,26091,5.2470200452263231
+Brooklyn,borough_most_efficient,5,5,6,5 to <6 days,533,0,533,26091,2.0428500249128052
+Brooklyn,borough_most_efficient,6,6,7,6 to <7 days,149,0,149,26091,0.5710781495534859
+Brooklyn,borough_most_efficient,7,7,8,7 to <8 days,59,0,59,26091,0.22613161626614542
+Brooklyn,borough_most_efficient,8,8,9,8 to <9 days,13,0,13,26091,0.049825610363726958
+Brooklyn,borough_most_efficient,9,9,10,9 to <10 days,4,0,4,26091,0.015330957034992909
+Brooklyn,borough_most_efficient,10,10,11,10 to <11 days,4,0,4,26091,0.015330957034992909
+Brooklyn,borough_most_efficient,11,11,12,11 to <12 days,2,0,2,26091,0.0076654785174964544
+Brooklyn,borough_most_efficient,12,12,13,12 to <13 days,1,0,1,26091,0.0038327392587482272
+Brooklyn,borough_most_efficient,13,13,14,13 to <14 days,0,0,0,26091,0
+Brooklyn,borough_most_efficient,14,14,15,14 to <15 days,0,0,0,26091,0
+Brooklyn,borough_most_efficient,15,15,16,15 to <16 days,0,0,0,26091,0
+Brooklyn,borough_most_efficient,16,16,17,16 to <17 days,0,0,0,26091,0
+Brooklyn,borough_most_efficient,17,17,18,17 to <18 days,0,0,0,26091,0
+Brooklyn,borough_most_efficient,18,18,19,18 to <19 days,0,0,0,26091,0
+Brooklyn,borough_most_efficient,19,19,20,19 to <20 days,0,0,0,26091,0
+Brooklyn,borough_most_efficient,20,20,,>=20 days or not inspected,0,329,329,26091,1.2609712161281668
+Manhattan,borough_most_efficient,0,0,1,0 to <1 days,1882,0,1882,4617,40.762399826727311
+Manhattan,borough_most_efficient,1,1,2,1 to <2 days,948,0,948,4617,20.532813515269655
+Manhattan,borough_most_efficient,2,2,3,2 to <3 days,661,0,661,4617,14.316655837123673
+Manhattan,borough_most_efficient,3,3,4,3 to <4 days,387,0,387,4617,8.3820662768031191
+Manhattan,borough_most_efficient,4,4,5,4 to <5 days,227,0,227,4617,4.9166125189517
+Manhattan,borough_most_efficient,5,5,6,5 to <6 days,156,0,156,4617,3.378817413905133
+Manhattan,borough_most_efficient,6,6,7,6 to <7 days,104,0,104,4617,2.2525449426034223
+Manhattan,borough_most_efficient,7,7,8,7 to <8 days,44,0,44,4617,0.95299978340914016
+Manhattan,borough_most_efficient,8,8,9,8 to <9 days,17,0,17,4617,0.36820446177171323
+Manhattan,borough_most_efficient,9,9,10,9 to <10 days,19,0,19,4617,0.41152263374485598
+Manhattan,borough_most_efficient,10,10,11,10 to <11 days,4,0,4,4617,0.086636343946285471
+Manhattan,borough_most_efficient,11,11,12,11 to <12 days,6,0,6,4617,0.12995451591942819
+Manhattan,borough_most_efficient,12,12,13,12 to <13 days,6,0,6,4617,0.12995451591942819
+Manhattan,borough_most_efficient,13,13,14,13 to <14 days,2,0,2,4617,0.043318171973142736
+Manhattan,borough_most_efficient,14,14,15,14 to <15 days,0,0,0,4617,0
+Manhattan,borough_most_efficient,15,15,16,15 to <16 days,0,0,0,4617,0
+Manhattan,borough_most_efficient,16,16,17,16 to <17 days,0,0,0,4617,0
+Manhattan,borough_most_efficient,17,17,18,17 to <18 days,0,0,0,4617,0
+Manhattan,borough_most_efficient,18,18,19,18 to <19 days,0,0,0,4617,0
+Manhattan,borough_most_efficient,19,19,20,19 to <20 days,0,0,0,4617,0
+Manhattan,borough_most_efficient,20,20,,>=20 days or not inspected,0,154,154,4617,3.3354992419319904
+Queens,borough_most_efficient,0,0,1,0 to <1 days,9430,0,9430,33438,28.201447454991328
+Queens,borough_most_efficient,1,1,2,1 to <2 days,4548,0,4548,33438,13.601291943298044
+Queens,borough_most_efficient,2,2,3,2 to <3 days,2729,0,2729,33438,8.161373287876069
+Queens,borough_most_efficient,3,3,4,3 to <4 days,2070,0,2070,33438,6.1905616364615108
+Queens,borough_most_efficient,4,4,5,4 to <5 days,1964,0,1964,33438,5.8735570309229024
+Queens,borough_most_efficient,5,5,6,5 to <6 days,1707,0,1707,33438,5.1049703929660861
+Queens,borough_most_efficient,6,6,7,6 to <7 days,1623,0,1623,33438,4.8537591961241704
+Queens,borough_most_efficient,7,7,8,7 to <8 days,990,0,990,33438,2.9607033913511573
+Queens,borough_most_efficient,8,8,9,8 to <9 days,493,0,493,33438,1.474370476703152
+Queens,borough_most_efficient,9,9,10,9 to <10 days,197,0,197,33438,0.58915006878401821
+Queens,borough_most_efficient,10,10,11,10 to <11 days,157,0,157,33438,0.46952568933548655
+Queens,borough_most_efficient,11,11,12,11 to <12 days,384,0,384,33438,1.1483940427059034
+Queens,borough_most_efficient,12,12,13,12 to <13 days,374,0,374,33438,1.1184879478437706
+Queens,borough_most_efficient,13,13,14,13 to <14 days,469,0,469,33438,1.4025958490340331
+Queens,borough_most_efficient,14,14,15,14 to <15 days,466,0,466,33438,1.3936240205753934
+Queens,borough_most_efficient,15,15,16,15 to <16 days,290,0,290,33438,0.8672767510018542
+Queens,borough_most_efficient,16,16,17,16 to <17 days,141,0,141,33438,0.42167593755607391
+Queens,borough_most_efficient,17,17,18,17 to <18 days,190,0,190,33438,0.56821580238052516
+Queens,borough_most_efficient,18,18,19,18 to <19 days,181,0,181,33438,0.54130031700460557
+Queens,borough_most_efficient,19,19,20,19 to <20 days,258,0,258,33438,0.77157724744302891
+Queens,borough_most_efficient,20,20,,>=20 days or not inspected,4421,159,4580,33438,13.69699144685687
+Staten Island,borough_most_efficient,0,0,1,0 to <1 days,3797,0,3797,9405,40.372142477405639
+Staten Island,borough_most_efficient,1,1,2,1 to <2 days,1299,0,1299,9405,13.811802232854864
+Staten Island,borough_most_efficient,2,2,3,2 to <3 days,708,0,708,9405,7.5279106858054226
+Staten Island,borough_most_efficient,3,3,4,3 to <4 days,348,0,348,9405,3.7001594896331738
+Staten Island,borough_most_efficient,4,4,5,4 to <5 days,254,0,254,9405,2.7006911217437533
+Staten Island,borough_most_efficient,5,5,6,5 to <6 days,235,0,235,9405,2.4986709197235513
+Staten Island,borough_most_efficient,6,6,7,6 to <7 days,291,0,291,9405,3.0940988835725678
+Staten Island,borough_most_efficient,7,7,8,7 to <8 days,503,0,503,9405,5.3482190324295589
+Staten Island,borough_most_efficient,8,8,9,8 to <9 days,466,0,466,9405,4.9548112706007439
+Staten Island,borough_most_efficient,9,9,10,9 to <10 days,403,0,403,9405,4.2849548112706008
+Staten Island,borough_most_efficient,10,10,11,10 to <11 days,317,0,317,9405,3.3705475810738967
+Staten Island,borough_most_efficient,11,11,12,11 to <12 days,232,0,232,9405,2.4667729930887825
+Staten Island,borough_most_efficient,12,12,13,12 to <13 days,193,0,193,9405,2.0520999468367891
+Staten Island,borough_most_efficient,13,13,14,13 to <14 days,146,0,146,9405,1.5523657628920786
+Staten Island,borough_most_efficient,14,14,15,14 to <15 days,92,0,92,9405,0.97820308346624141
+Staten Island,borough_most_efficient,15,15,16,15 to <16 days,56,0,56,9405,0.59542796384901653
+Staten Island,borough_most_efficient,16,16,17,16 to <17 days,30,0,30,9405,0.31897926634768742
+Staten Island,borough_most_efficient,17,17,18,17 to <18 days,15,0,15,9405,0.15948963317384371
+Staten Island,borough_most_efficient,18,18,19,18 to <19 days,9,0,9,9405,0.09569377990430622
+Staten Island,borough_most_efficient,19,19,20,19 to <20 days,1,0,1,9405,0.01063264221158958
+Staten Island,borough_most_efficient,20,20,,>=20 days or not inspected,10,0,10,9405,0.1063264221158958
+Bronx,city_most_efficient,0,0,1,0 to <1 days,5161,0,5161,7602,67.890028939752696
+Bronx,city_most_efficient,1,1,2,1 to <2 days,1356,0,1356,7602,17.837411207576952
+Bronx,city_most_efficient,2,2,3,2 to <3 days,714,0,714,7602,9.3922651933701662
+Bronx,city_most_efficient,3,3,4,3 to <4 days,140,0,140,7602,1.8416206261510129
+Bronx,city_most_efficient,4,4,5,4 to <5 days,98,0,98,7602,1.2891344383057091
+Bronx,city_most_efficient,5,5,6,5 to <6 days,65,0,65,7602,0.85503814785582744
+Bronx,city_most_efficient,6,6,7,6 to <7 days,8,0,8,7602,0.10523546435148645
+Bronx,city_most_efficient,7,7,8,7 to <8 days,3,0,3,7602,0.039463299131807419
+Bronx,city_most_efficient,8,8,9,8 to <9 days,1,0,1,7602,0.013154433043935806
+Bronx,city_most_efficient,9,9,10,9 to <10 days,0,0,0,7602,0
+Bronx,city_most_efficient,10,10,11,10 to <11 days,0,0,0,7602,0
+Bronx,city_most_efficient,11,11,12,11 to <12 days,0,0,0,7602,0
+Bronx,city_most_efficient,12,12,13,12 to <13 days,0,0,0,7602,0
+Bronx,city_most_efficient,13,13,14,13 to <14 days,0,0,0,7602,0
+Bronx,city_most_efficient,14,14,15,14 to <15 days,0,0,0,7602,0
+Bronx,city_most_efficient,15,15,16,15 to <16 days,0,0,0,7602,0
+Bronx,city_most_efficient,16,16,17,16 to <17 days,0,0,0,7602,0
+Bronx,city_most_efficient,17,17,18,17 to <18 days,0,0,0,7602,0
+Bronx,city_most_efficient,18,18,19,18 to <19 days,0,0,0,7602,0
+Bronx,city_most_efficient,19,19,20,19 to <20 days,0,0,0,7602,0
+Bronx,city_most_efficient,20,20,,>=20 days or not inspected,0,56,56,7602,0.73664825046040516
+Brooklyn,city_most_efficient,0,0,1,0 to <1 days,11015,0,11015,26091,42.217622935111727
+Brooklyn,city_most_efficient,1,1,2,1 to <2 days,6185,0,6185,26091,23.705492315357787
+Brooklyn,city_most_efficient,2,2,3,2 to <3 days,2846,0,2846,26091,10.907975930397455
+Brooklyn,city_most_efficient,3,3,4,3 to <4 days,1704,0,1704,26091,6.5309876969069798
+Brooklyn,city_most_efficient,4,4,5,4 to <5 days,1618,0,1618,26091,6.2013721206546322
+Brooklyn,city_most_efficient,5,5,6,5 to <6 days,1407,0,1407,26091,5.3926641370587562
+Brooklyn,city_most_efficient,6,6,7,6 to <7 days,767,0,767,26091,2.9397110114598903
+Brooklyn,city_most_efficient,7,7,8,7 to <8 days,311,0,311,26091,1.1919819094706987
+Brooklyn,city_most_efficient,8,8,9,8 to <9 days,89,0,89,26091,0.34111379402859221
+Brooklyn,city_most_efficient,9,9,10,9 to <10 days,33,0,33,26091,0.1264803955386915
+Brooklyn,city_most_efficient,10,10,11,10 to <11 days,14,0,14,26091,0.053658349622475184
+Brooklyn,city_most_efficient,11,11,12,11 to <12 days,10,0,10,26091,0.038327392587482273
+Brooklyn,city_most_efficient,12,12,13,12 to <13 days,0,0,0,26091,0
+Brooklyn,city_most_efficient,13,13,14,13 to <14 days,2,0,2,26091,0.0076654785174964544
+Brooklyn,city_most_efficient,14,14,15,14 to <15 days,0,0,0,26091,0
+Brooklyn,city_most_efficient,15,15,16,15 to <16 days,0,0,0,26091,0
+Brooklyn,city_most_efficient,16,16,17,16 to <17 days,0,0,0,26091,0
+Brooklyn,city_most_efficient,17,17,18,17 to <18 days,0,0,0,26091,0
+Brooklyn,city_most_efficient,18,18,19,18 to <19 days,0,0,0,26091,0
+Brooklyn,city_most_efficient,19,19,20,19 to <20 days,1,0,1,26091,0.0038327392587482272
+Brooklyn,city_most_efficient,20,20,,>=20 days or not inspected,0,89,89,26091,0.34111379402859221
+Manhattan,city_most_efficient,0,0,1,0 to <1 days,3947,0,3947,4617,85.48841238899719
+Manhattan,city_most_efficient,1,1,2,1 to <2 days,425,0,425,4617,9.20511154429283
+Manhattan,city_most_efficient,2,2,3,2 to <3 days,184,0,184,4617,3.9852718215291314
+Manhattan,city_most_efficient,3,3,4,3 to <4 days,32,0,32,4617,0.69309075157028377
+Manhattan,city_most_efficient,4,4,5,4 to <5 days,3,0,3,4617,0.064977257959714096
+Manhattan,city_most_efficient,5,5,6,5 to <6 days,0,0,0,4617,0
+Manhattan,city_most_efficient,6,6,7,6 to <7 days,0,0,0,4617,0
+Manhattan,city_most_efficient,7,7,8,7 to <8 days,0,0,0,4617,0
+Manhattan,city_most_efficient,8,8,9,8 to <9 days,0,0,0,4617,0
+Manhattan,city_most_efficient,9,9,10,9 to <10 days,0,0,0,4617,0
+Manhattan,city_most_efficient,10,10,11,10 to <11 days,0,0,0,4617,0
+Manhattan,city_most_efficient,11,11,12,11 to <12 days,0,0,0,4617,0
+Manhattan,city_most_efficient,12,12,13,12 to <13 days,0,0,0,4617,0
+Manhattan,city_most_efficient,13,13,14,13 to <14 days,0,0,0,4617,0
+Manhattan,city_most_efficient,14,14,15,14 to <15 days,0,0,0,4617,0
+Manhattan,city_most_efficient,15,15,16,15 to <16 days,0,0,0,4617,0
+Manhattan,city_most_efficient,16,16,17,16 to <17 days,0,0,0,4617,0
+Manhattan,city_most_efficient,17,17,18,17 to <18 days,0,0,0,4617,0
+Manhattan,city_most_efficient,18,18,19,18 to <19 days,0,0,0,4617,0
+Manhattan,city_most_efficient,19,19,20,19 to <20 days,0,0,0,4617,0
+Manhattan,city_most_efficient,20,20,,>=20 days or not inspected,0,26,26,4617,0.56313623565085558
+Queens,city_most_efficient,0,0,1,0 to <1 days,8851,0,8851,33438,26.469884562473833
+Queens,city_most_efficient,1,1,2,1 to <2 days,5066,0,5066,33438,15.150427657156529
+Queens,city_most_efficient,2,2,3,2 to <3 days,3164,0,3164,33438,9.4622884143788504
+Queens,city_most_efficient,3,3,4,3 to <4 days,2108,0,2108,33438,6.3042047969376158
+Queens,city_most_efficient,4,4,5,4 to <5 days,1391,0,1391,33438,4.159937795322687
+Queens,city_most_efficient,5,5,6,5 to <6 days,1394,0,1394,33438,4.1689096237813263
+Queens,city_most_efficient,6,6,7,6 to <7 days,1833,0,1833,33438,5.481787188228961
+Queens,city_most_efficient,7,7,8,7 to <8 days,1462,0,1462,33438,4.3722710688438307
+Queens,city_most_efficient,8,8,9,8 to <9 days,1033,0,1033,33438,3.0892995992583288
+Queens,city_most_efficient,9,9,10,9 to <10 days,666,0,666,33438,1.9917459178180512
+Queens,city_most_efficient,10,10,11,10 to <11 days,411,0,411,33438,1.2291404988336623
+Queens,city_most_efficient,11,11,12,11 to <12 days,567,0,567,33438,1.6956755786829356
+Queens,city_most_efficient,12,12,13,12 to <13 days,688,0,688,33438,2.0575393265147439
+Queens,city_most_efficient,13,13,14,13 to <14 days,753,0,753,33438,2.2519289431186076
+Queens,city_most_efficient,14,14,15,14 to <15 days,761,0,761,33438,2.2758538190083137
+Queens,city_most_efficient,15,15,16,15 to <16 days,521,0,521,33438,1.5581075423171242
+Queens,city_most_efficient,16,16,17,16 to <17 days,276,0,276,33438,0.82540821819486809
+Queens,city_most_efficient,17,17,18,17 to <18 days,635,0,635,33438,1.8990370237454393
+Queens,city_most_efficient,18,18,19,18 to <19 days,712,0,712,33438,2.1293139541838628
+Queens,city_most_efficient,19,19,20,19 to <20 days,479,0,479,33438,1.4325019438961661
+Queens,city_most_efficient,20,20,,>=20 days or not inspected,667,0,667,33438,1.9947365273042645
+Staten Island,city_most_efficient,0,0,1,0 to <1 days,4937,0,4937,9405,52.493354598617756
+Staten Island,city_most_efficient,1,1,2,1 to <2 days,1958,0,1958,9405,20.818713450292396
+Staten Island,city_most_efficient,2,2,3,2 to <3 days,1069,0,1069,9405,11.366294524189261
+Staten Island,city_most_efficient,3,3,4,3 to <4 days,414,0,414,9405,4.401913875598086
+Staten Island,city_most_efficient,4,4,5,4 to <5 days,275,0,275,9405,2.9239766081871346
+Staten Island,city_most_efficient,5,5,6,5 to <6 days,147,0,147,9405,1.5629984051036683
+Staten Island,city_most_efficient,6,6,7,6 to <7 days,101,0,101,9405,1.0738968633705477
+Staten Island,city_most_efficient,7,7,8,7 to <8 days,114,0,114,9405,1.2121212121212122
+Staten Island,city_most_efficient,8,8,9,8 to <9 days,197,0,197,9405,2.0946305156831473
+Staten Island,city_most_efficient,9,9,10,9 to <10 days,91,0,91,9405,0.96757044125465175
+Staten Island,city_most_efficient,10,10,11,10 to <11 days,24,0,24,9405,0.2551834130781499
+Staten Island,city_most_efficient,11,11,12,11 to <12 days,1,0,1,9405,0.01063264221158958
+Staten Island,city_most_efficient,12,12,13,12 to <13 days,4,0,4,9405,0.042530568846358321
+Staten Island,city_most_efficient,13,13,14,13 to <14 days,0,0,0,9405,0
+Staten Island,city_most_efficient,14,14,15,14 to <15 days,0,0,0,9405,0
+Staten Island,city_most_efficient,15,15,16,15 to <16 days,0,0,0,9405,0
+Staten Island,city_most_efficient,16,16,17,16 to <17 days,0,0,0,9405,0
+Staten Island,city_most_efficient,17,17,18,17 to <18 days,0,0,0,9405,0
+Staten Island,city_most_efficient,18,18,19,18 to <19 days,0,0,0,9405,0
+Staten Island,city_most_efficient,19,19,20,19 to <20 days,0,0,0,9405,0
+Staten Island,city_most_efficient,20,20,,>=20 days or not inspected,0,73,73,9405,0.77618288144603931
+Bronx,historical_2019,0,0,1,0 to <1 days,659,0,659,2534,26.006314127861089
+Bronx,historical_2019,1,1,2,1 to <2 days,361,0,361,2534,14.246250986582478
+Bronx,historical_2019,2,2,3,2 to <3 days,124,0,124,2534,4.8934490923441203
+Bronx,historical_2019,3,3,4,3 to <4 days,110,0,110,2534,4.3409629044988165
+Bronx,historical_2019,4,4,5,4 to <5 days,99,0,99,2534,3.9068666140489343
+Bronx,historical_2019,5,5,6,5 to <6 days,74,0,74,2534,2.9202841357537492
+Bronx,historical_2019,6,6,7,6 to <7 days,79,0,79,2534,3.117600631412786
+Bronx,historical_2019,7,7,8,7 to <8 days,70,0,70,2534,2.7624309392265194
+Bronx,historical_2019,8,8,9,8 to <9 days,61,0,61,2534,2.4072612470402523
+Bronx,historical_2019,9,9,10,9 to <10 days,38,0,38,2534,1.499605367008682
+Bronx,historical_2019,10,10,11,10 to <11 days,61,0,61,2534,2.4072612470402523
+Bronx,historical_2019,11,11,12,11 to <12 days,30,0,30,2534,1.1838989739542225
+Bronx,historical_2019,12,12,13,12 to <13 days,40,0,40,2534,1.5785319652722967
+Bronx,historical_2019,13,13,14,13 to <14 days,18,0,18,2534,0.71033938437253352
+Bronx,historical_2019,14,14,15,14 to <15 days,22,0,22,2534,0.86819258089976326
+Bronx,historical_2019,15,15,16,15 to <16 days,18,0,18,2534,0.71033938437253352
+Bronx,historical_2019,16,16,17,16 to <17 days,20,0,20,2534,0.78926598263614833
+Bronx,historical_2019,17,17,18,17 to <18 days,14,0,14,2534,0.5524861878453039
+Bronx,historical_2019,18,18,19,18 to <19 days,13,0,13,2534,0.51302288871349644
+Bronx,historical_2019,19,19,20,19 to <20 days,9,0,9,2534,0.35516969218626676
+Bronx,historical_2019,20,20,,>=20 days or not inspected,169,445,614,2534,24.230465666929756
+Brooklyn,historical_2019,0,0,1,0 to <1 days,2126,0,2126,8697,24.445210992296193
+Brooklyn,historical_2019,1,1,2,1 to <2 days,1024,0,1024,8697,11.774175002874555
+Brooklyn,historical_2019,2,2,3,2 to <3 days,333,0,333,8697,3.8289065194894789
+Brooklyn,historical_2019,3,3,4,3 to <4 days,222,0,222,8697,2.5526043463263193
+Brooklyn,historical_2019,4,4,5,4 to <5 days,202,0,202,8697,2.3226399908014259
+Brooklyn,historical_2019,5,5,6,5 to <6 days,145,0,145,8697,1.667241577555479
+Brooklyn,historical_2019,6,6,7,6 to <7 days,141,0,141,8697,1.6212487064505001
+Brooklyn,historical_2019,7,7,8,7 to <8 days,133,0,133,8697,1.5292629642405426
+Brooklyn,historical_2019,8,8,9,8 to <9 days,75,0,75,8697,0.86236633321835121
+Brooklyn,historical_2019,9,9,10,9 to <10 days,82,0,82,8697,0.94285385765206398
+Brooklyn,historical_2019,10,10,11,10 to <11 days,63,0,63,8697,0.72438771990341499
+Brooklyn,historical_2019,11,11,12,11 to <12 days,80,0,80,8697,0.91985742209957455
+Brooklyn,historical_2019,12,12,13,12 to <13 days,57,0,57,8697,0.65539841324594683
+Brooklyn,historical_2019,13,13,14,13 to <14 days,45,0,45,8697,0.51741979993101073
+Brooklyn,historical_2019,14,14,15,14 to <15 days,73,0,73,8697,0.83936989766586179
+Brooklyn,historical_2019,15,15,16,15 to <16 days,64,0,64,8697,0.73588593767965971
+Brooklyn,historical_2019,16,16,17,16 to <17 days,45,0,45,8697,0.51741979993101073
+Brooklyn,historical_2019,17,17,18,17 to <18 days,54,0,54,8697,0.62090375991721281
+Brooklyn,historical_2019,18,18,19,18 to <19 days,42,0,42,8697,0.48292514660227664
+Brooklyn,historical_2019,19,19,20,19 to <20 days,32,0,32,8697,0.36794296883982985
+Brooklyn,historical_2019,20,20,,>=20 days or not inspected,2411,1248,3659,8697,42.07197884327929
+Manhattan,historical_2019,0,0,1,0 to <1 days,411,0,411,1539,26.705653021442494
+Manhattan,historical_2019,1,1,2,1 to <2 days,462,0,462,1539,30.019493177387915
+Manhattan,historical_2019,2,2,3,2 to <3 days,105,0,105,1539,6.8226120857699808
+Manhattan,historical_2019,3,3,4,3 to <4 days,39,0,39,1539,2.53411306042885
+Manhattan,historical_2019,4,4,5,4 to <5 days,20,0,20,1539,1.2995451591942819
+Manhattan,historical_2019,5,5,6,5 to <6 days,20,0,20,1539,1.2995451591942819
+Manhattan,historical_2019,6,6,7,6 to <7 days,7,0,7,1539,0.45484080571799868
+Manhattan,historical_2019,7,7,8,7 to <8 days,3,0,3,1539,0.19493177387914229
+Manhattan,historical_2019,8,8,9,8 to <9 days,4,0,4,1539,0.25990903183885639
+Manhattan,historical_2019,9,9,10,9 to <10 days,2,0,2,1539,0.12995451591942819
+Manhattan,historical_2019,10,10,11,10 to <11 days,3,0,3,1539,0.19493177387914229
+Manhattan,historical_2019,11,11,12,11 to <12 days,0,0,0,1539,0
+Manhattan,historical_2019,12,12,13,12 to <13 days,1,0,1,1539,0.064977257959714096
+Manhattan,historical_2019,13,13,14,13 to <14 days,2,0,2,1539,0.12995451591942819
+Manhattan,historical_2019,14,14,15,14 to <15 days,3,0,3,1539,0.19493177387914229
+Manhattan,historical_2019,15,15,16,15 to <16 days,1,0,1,1539,0.064977257959714096
+Manhattan,historical_2019,16,16,17,16 to <17 days,1,0,1,1539,0.064977257959714096
+Manhattan,historical_2019,17,17,18,17 to <18 days,1,0,1,1539,0.064977257959714096
+Manhattan,historical_2019,18,18,19,18 to <19 days,0,0,0,1539,0
+Manhattan,historical_2019,19,19,20,19 to <20 days,2,0,2,1539,0.12995451591942819
+Manhattan,historical_2019,20,20,,>=20 days or not inspected,38,414,452,1539,29.369720597790774
+Queens,historical_2019,0,0,1,0 to <1 days,2648,0,2648,11146,23.757401758478377
+Queens,historical_2019,1,1,2,1 to <2 days,2046,0,2046,11146,18.356361026377176
+Queens,historical_2019,2,2,3,2 to <3 days,723,0,723,11146,6.4866319755966266
+Queens,historical_2019,3,3,4,3 to <4 days,467,0,467,11146,4.1898438901848198
+Queens,historical_2019,4,4,5,4 to <5 days,338,0,338,11146,3.0324780190202762
+Queens,historical_2019,5,5,6,5 to <6 days,297,0,297,11146,2.6646330522160415
+Queens,historical_2019,6,6,7,6 to <7 days,212,0,212,11146,1.9020276332316526
+Queens,historical_2019,7,7,8,7 to <8 days,215,0,215,11146,1.9289431186075723
+Queens,historical_2019,8,8,9,8 to <9 days,143,0,143,11146,1.2829714695855015
+Queens,historical_2019,9,9,10,9 to <10 days,139,0,139,11146,1.247084155750942
+Queens,historical_2019,10,10,11,10 to <11 days,94,0,94,11146,0.84335187511214782
+Queens,historical_2019,11,11,12,11 to <12 days,109,0,109,11146,0.97792930199174588
+Queens,historical_2019,12,12,13,12 to <13 days,76,0,76,11146,0.68185896285663017
+Queens,historical_2019,13,13,14,13 to <14 days,87,0,87,11146,0.78054907590166878
+Queens,historical_2019,14,14,15,14 to <15 days,110,0,110,11146,0.98690113045038574
+Queens,historical_2019,15,15,16,15 to <16 days,64,0,64,11146,0.5741970213529517
+Queens,historical_2019,16,16,17,16 to <17 days,56,0,56,11146,0.50242239368383279
+Queens,historical_2019,17,17,18,17 to <18 days,59,0,59,11146,0.52933787905975238
+Queens,historical_2019,18,18,19,18 to <19 days,39,0,39,11146,0.34990130988695495
+Queens,historical_2019,19,19,20,19 to <20 days,63,0,63,11146,0.56522519289431183
+Queens,historical_2019,20,20,,>=20 days or not inspected,1403,1758,3161,11146,28.359949757760631
+Staten Island,historical_2019,0,0,1,0 to <1 days,878,0,878,3135,28.006379585326954
+Staten Island,historical_2019,1,1,2,1 to <2 days,495,0,495,3135,15.789473684210526
+Staten Island,historical_2019,2,2,3,2 to <3 days,155,0,155,3135,4.9441786283891549
+Staten Island,historical_2019,3,3,4,3 to <4 days,132,0,132,3135,4.2105263157894735
+Staten Island,historical_2019,4,4,5,4 to <5 days,89,0,89,3135,2.8389154704944177
+Staten Island,historical_2019,5,5,6,5 to <6 days,71,0,71,3135,2.2647527910685805
+Staten Island,historical_2019,6,6,7,6 to <7 days,50,0,50,3135,1.594896331738437
+Staten Island,historical_2019,7,7,8,7 to <8 days,54,0,54,3135,1.7224880382775121
+Staten Island,historical_2019,8,8,9,8 to <9 days,37,0,37,3135,1.1802232854864434
+Staten Island,historical_2019,9,9,10,9 to <10 days,29,0,29,3135,0.92503987240829344
+Staten Island,historical_2019,10,10,11,10 to <11 days,28,0,28,3135,0.89314194577352468
+Staten Island,historical_2019,11,11,12,11 to <12 days,13,0,13,3135,0.41467304625199364
+Staten Island,historical_2019,12,12,13,12 to <13 days,17,0,17,3135,0.54226475279106856
+Staten Island,historical_2019,13,13,14,13 to <14 days,17,0,17,3135,0.54226475279106856
+Staten Island,historical_2019,14,14,15,14 to <15 days,10,0,10,3135,0.31897926634768742
+Staten Island,historical_2019,15,15,16,15 to <16 days,14,0,14,3135,0.44657097288676234
+Staten Island,historical_2019,16,16,17,16 to <17 days,15,0,15,3135,0.4784688995215311
+Staten Island,historical_2019,17,17,18,17 to <18 days,6,0,6,3135,0.19138755980861244
+Staten Island,historical_2019,18,18,19,18 to <19 days,4,0,4,3135,0.12759170653907495
+Staten Island,historical_2019,19,19,20,19 to <20 days,1,0,1,3135,0.031897926634768738
+Staten Island,historical_2019,20,20,,>=20 days or not inspected,79,941,1020,3135,32.535885167464116

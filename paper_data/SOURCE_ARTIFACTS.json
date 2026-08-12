@@ -1,0 +1,469 @@
+{
+  "artifacts": [
+    {
+      "artifact_id": "descriptive-2026-07-21",
+      "marker_sha256": "0f874bc0b0cf64e60564d026b17b619e81ce7cdadfc37d07718fae956eeb0d49",
+      "scope": "observed descriptive aggregates",
+      "status": "authenticated",
+      "status_sha256": "fc3fb1dcf54dc70be547be5700beb90375ce58519685d9697561308b51a53306"
+    },
+    {
+      "artifact_id": "accounting-reconciliation-2026-07-22",
+      "scope": "five-Borough and six-category simulation arrival and inspection-capacity accounting",
+      "status": "authenticated",
+      "status_sha256": "e449cee1c2c0af293e5dbeddd774adc85100750c7b217c8fe834a25ec1e1ab62"
+    },
+    {
+      "artifact_id": "inference-seeds-321-345",
+      "scope": "2019 locked-policy inference",
+      "status": "authenticated",
+      "status_sha256": "b5c0cbb40711712c692d8706caf6422a594073d5b7b4629adb0513d04f0e4fd7"
+    },
+    {
+      "artifact_id": "observed-delay-2026-08-04",
+      "marker_sha256": "b70ae47bfabddf7bb30f47686e7e85e98f59405d9076396fe2c53d5b32304953",
+      "scope": "observed delay histograms",
+      "status": "authenticated",
+      "status_sha256": "6914f643124556d0c1d5a12e3a5e836a12edc183fe390964d3c641f09f5184c0"
+    },
+    {
+      "artifact_id": "out-of-sample-seeds-321-325",
+      "scope": "2021 and 2022 fixed-policy evaluation",
+      "status": "authenticated",
+      "status_sha256": "f4a1168a914d89e6020471e333794d48f9670cb644898ec69afeb558d32b9297"
+    },
+    {
+      "artifact_id": "primary-style-v15",
+      "marker_sha256": "76f2ae396937cd24acfa87c9e71a42f146175cbfa87d5ecc41fede59eeeecd3b",
+      "scope": "interim_primary_only",
+      "status": "authenticated",
+      "status_sha256": "74bfc8e67ac791bd3eac893e6b3677bc13a4391d19f5c7b6a8e1408ea6f9c5df"
+    },
+    {
+      "artifact_id": "min20-service-floor-selection-2026-08-10",
+      "marker_sha256": "e1818cdc5c20bde1f720ca5b3f370001e6a616dca5407791c8700226fffdcf57",
+      "scope": "selection-only 20 percent minimum-service finite support",
+      "status": "authenticated",
+      "status_sha256": "b84cfa5bd1ade0863364e95be42aa5ff4d9b99976d9ec52b37c88324acb1a84e"
+    },
+    {
+      "artifact_id": "priority-weight-sensitivity-2026-08-08",
+      "marker_sha256": "e2cf4bc6b0cdc2d46438ec6dcc7629a8fe5b744b33421d42207cb494417d7bcf",
+      "scope": "named and ordered random priority weights",
+      "status": "authenticated",
+      "status_sha256": "2e33b5d91d8c7b6a8bbae64b56685b0ee74c84f9864d05c24c456150dbe44724"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "marker_sha256": "3f78eb461c54f6f2dc2bc23fc001676f5fe502d0b8658d74cc092c030bf828e9",
+      "scope": "default display roles at event seed 321 plus historical 2019",
+      "status": "authenticated",
+      "status_sha256": "572f4aeed8f413b812e4ac538ff7b8129e2c88cc6a7e7bff2002dcc762406c58"
+    },
+    {
+      "artifact_id": "search-progress-2026-08-06",
+      "scope": "six primary optimization arms; no standalone completion marker",
+      "status": "source_hash_authenticated"
+    },
+    {
+      "artifact_id": "table-1-normalization",
+      "marker_sha256": "39fc32a4e92cd943808ea7a0d591143581f6659f87fad11dc12f4bea8ceed506",
+      "scope": "contemporaneous historical denominators",
+      "status": "authenticated"
+    },
+    {
+      "artifact_id": "appendix-composite-final-2026-08-10",
+      "marker_sha256": "cb91d79fa84d34e2156822fe226a7ac3b996de7e266bf70be44e1ddc184aa3cf",
+      "scope": "four-setting reoptimized frontiers and role-matched D=100/D=200 median-delay cell service",
+      "status": "authenticated",
+      "status_sha256": "51d4df6b879fb710a45cb07214ebc042da98d7709e3a69c4bd30ad01a0cbf56d"
+    }
+  ],
+  "exclusions": [
+    "within-category recorded-risk delay regression",
+    "request-level event rows and identifiers",
+    "run-control metadata"
+  ],
+  "schema": "sla-public-source-artifacts-v1",
+  "source_files": [
+    {
+      "artifact_id": "accounting-reconciliation-2026-07-22",
+      "logical_name": "accounting_by_borough_year_2019_2022.csv",
+      "sha256": "783fd2574251734037e8c16515d2b0eae5d55f329db04f821248c4848abd1b74",
+      "size_bytes": 50502,
+      "source_id": "accounting_by_borough_year_2019_2022"
+    },
+    {
+      "artifact_id": "descriptive-2026-07-21",
+      "logical_name": "paper_annual_inspection_completion_rows_by_borough.csv",
+      "sha256": "611dbd72b44366fa02f830b02a9d40bd2b03c635c3445e8b7596eb63b6cb22b1",
+      "size_bytes": 179,
+      "source_id": "annual_inspections"
+    },
+    {
+      "artifact_id": "descriptive-2026-07-21",
+      "logical_name": "paper_annual_request_rows_by_borough.csv",
+      "sha256": "d2132322858ebaea6f6bee1594807d56186b3a4b05dc0ce75e8711f4d7c63ccb",
+      "size_bytes": 185,
+      "source_id": "annual_requests"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "policy_metadata.csv",
+      "sha256": "0cde6f82e6d2337bf7b559dac42f6cc138d10b251024f4949b48677c03cf114a",
+      "size_bytes": 888,
+      "source_id": "borough_balanced_metadata"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "tract_cost_components_by_cell.csv",
+      "sha256": "9031d91fec0fac5e281ee9129f0c5fb9d182e69f9c884e19e32ba3eeff602e1b",
+      "size_bytes": 878547,
+      "source_id": "borough_balanced_tract_costs"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "policy_metadata.csv",
+      "sha256": "d4bdcb71d2b14dea3b85347becc0efd5e0c1266e763be3740f49febb0b08cb61",
+      "size_bytes": 781,
+      "source_id": "borough_efficient_metadata"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "tract_cost_components_by_cell.csv",
+      "sha256": "dd4bbc61347e9fd81a92dd62c5e4563be7117ebeacadc18b0c7c90730f7b8d85",
+      "size_bytes": 873491,
+      "source_id": "borough_efficient_tract_costs"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "policy_metadata.csv",
+      "sha256": "8274f12b212e425a02bf205369ddd06819b0b19e036c4440f592ca77996d16da",
+      "size_bytes": 801,
+      "source_id": "borough_equitable_metadata"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "tract_cost_components_by_cell.csv",
+      "sha256": "6bec6d7d5d7a7e3f7ffe2c351d28264ba6ca5251274408afce0f539b4c17a12c",
+      "size_bytes": 888732,
+      "source_id": "borough_equitable_tract_costs"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "hazard_request_delays.csv",
+      "sha256": "df5952481df3a30b8ed61648af74e7d032c2b2a81315fca45154fb597646882d",
+      "size_bytes": 31396432,
+      "source_id": "borough_hazard_delays"
+    },
+    {
+      "artifact_id": "primary-style-v15",
+      "logical_name": "paper_budget_allocation_table.csv",
+      "sha256": "0892d912a14d59e9ff1a4dc020c2cea668d1e92f49e30c1a539f16ba725516f7",
+      "size_bytes": 701,
+      "source_id": "budget_allocation"
+    },
+    {
+      "artifact_id": "primary-style-v15",
+      "logical_name": "capacity125_fixed_support_envelope_diagnostic.csv",
+      "sha256": "8195d27ecfe020aa263fd20a121bd9ec26c8e851bf95979e6e14a624739dd517",
+      "size_bytes": 1206,
+      "source_id": "capacity_diagnostic"
+    },
+    {
+      "artifact_id": "primary-style-v15",
+      "logical_name": "capacity125_fixed_support_retention_service.csv",
+      "sha256": "123fc910b11db2cc3c6982023b7c2d19d625186d0065f39182dadeaea030b017",
+      "size_bytes": 9524,
+      "source_id": "capacity_means"
+    },
+    {
+      "artifact_id": "primary-style-v15",
+      "logical_name": "inference_cell_delay_service_all_display_roles.csv",
+      "sha256": "a5e60c4eeaca4114a7a8c6adf8cb2c7544e2d14b376d3633216e7043fabc1eaa",
+      "size_bytes": 65444,
+      "source_id": "cells_source"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "policy_metadata.csv",
+      "sha256": "3fdba24b67da0d2423833698346da9d53f5fecf55e18aba24fc499ccd848b0bf",
+      "size_bytes": 879,
+      "source_id": "city_balanced_metadata"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "tract_cost_components_by_cell.csv",
+      "sha256": "6d16109c2ef076ffbd4d3c9bc2d0b558419e80c401c04e7b1a9d7dc9cc0d08f9",
+      "size_bytes": 830559,
+      "source_id": "city_balanced_tract_costs"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "policy_metadata.csv",
+      "sha256": "442426b17b80c3db68f0ad585fc85cc08967d2e7fc22c2dfc84c8cb030b0a009",
+      "size_bytes": 782,
+      "source_id": "city_efficient_metadata"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "tract_cost_components_by_cell.csv",
+      "sha256": "797b92d4257de583862f8cd23884b038f231742441859141c0b0ec499607557d",
+      "size_bytes": 808476,
+      "source_id": "city_efficient_tract_costs"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "policy_metadata.csv",
+      "sha256": "5547f561effbd4433706f9ae7183f3b1788bdfd7c0ae2c11d38fc2a16f4d6c59",
+      "size_bytes": 851,
+      "source_id": "city_equitable_metadata"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "tract_cost_components_by_cell.csv",
+      "sha256": "1a1cea506db6d07f0e572e6faa623dbf348f78b61ee055237647fb34303a2378",
+      "size_bytes": 853523,
+      "source_id": "city_equitable_tract_costs"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "hazard_request_delays.csv",
+      "sha256": "be2dcde2c28b73325fe6ae530e18c7f80ac9c0855ac9e458131675733fd934b5",
+      "size_bytes": 31031085,
+      "source_id": "city_hazard_delays"
+    },
+    {
+      "artifact_id": "observed-delay-2026-08-04",
+      "logical_name": "observed_delay_histogram_bins_all_categories.csv",
+      "sha256": "5ad429b1ea258fa4e6d8156eea1c14dc9c227c348e994f39f29845b031bb2670",
+      "size_bytes": 34542,
+      "source_id": "delay_bins"
+    },
+    {
+      "artifact_id": "observed-delay-2026-08-04",
+      "logical_name": "observed_delay_histogram_summary_all_categories.csv",
+      "sha256": "9d62d1b9518e09f8fcf0358f417f4e40e16e0623a7d2b2b65b4162fa89a7c7bb",
+      "size_bytes": 1571,
+      "source_id": "delay_summary"
+    },
+    {
+      "artifact_id": "primary-style-v15",
+      "logical_name": "hazard_histogram_diagnostics.csv",
+      "sha256": "16f3d7eb342dd3ae80113c2899d1c20ac65f89d32c26ae83d88d488fa931dacf",
+      "size_bytes": 4481,
+      "source_id": "hazard_diagnostics"
+    },
+    {
+      "artifact_id": "descriptive-2026-07-21",
+      "logical_name": "hazard_risk_counts.csv",
+      "sha256": "538535cfbf0e4cb1332b69c001bfa8c16a2377d1dfa596b66278304fc8c6f550",
+      "size_bytes": 1021,
+      "source_id": "hazard_risk_counts"
+    },
+    {
+      "artifact_id": "descriptive-2026-07-21",
+      "logical_name": "hazard_risk_summary.csv",
+      "sha256": "509747b957609c113dc283697b45f668cc79b37b35fe599d039ff9942038cae1",
+      "size_bytes": 407,
+      "source_id": "hazard_risk_summary"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "df_objectives.csv",
+      "sha256": "3067a8418046338ddfd420f93d3d29b2ff080fe4586e418f1088608597a5ea7c",
+      "size_bytes": 4641,
+      "source_id": "historical_cells"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "hazard_request_outcomes.csv",
+      "sha256": "fa24c342263254132803d510aa039e9e7ae505f07e8125441dfc20048feafea7",
+      "size_bytes": 11337695,
+      "source_id": "historical_hazard_events"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "policy_metadata.csv",
+      "sha256": "bc42971b35eab9b36db5d3fd7f1cf25b709c9d5b9ec79f5d6d313ff2322a85db",
+      "size_bytes": 495,
+      "source_id": "historical_metadata"
+    },
+    {
+      "artifact_id": "primary-style-v15",
+      "logical_name": "historical_plot_reference.csv",
+      "sha256": "60c5b1d03093b4490e468f40ec8194fcaf20a318d7c0b5c67e9628eac94810f8",
+      "size_bytes": 255,
+      "source_id": "historical_reference"
+    },
+    {
+      "artifact_id": "request-events-v3",
+      "logical_name": "tract_cost_components_by_cell.csv",
+      "sha256": "3ca0bcb1beddd2fdb004b3e9c741d95677d4598cc5c021a56d5652a7b4b0e595",
+      "size_bytes": 618863,
+      "source_id": "historical_tract_costs"
+    },
+    {
+      "artifact_id": "primary-style-v15",
+      "logical_name": "locked_inference_policy_means.csv",
+      "sha256": "3fb6172ae28733437f73d3cdfb91fd56b5ea93e2b70828b723720f046e8a3ac6",
+      "size_bytes": 6377,
+      "source_id": "inference_means"
+    },
+    {
+      "artifact_id": "inference-seeds-321-345",
+      "logical_name": "policy_scores_all_runs.csv",
+      "sha256": "3b3eaa0797333ba0cc92ba2b96607a60a1862a1f298cb784348219cf713d3239",
+      "size_bytes": 260582,
+      "source_id": "inference_scores"
+    },
+    {
+      "artifact_id": "primary-style-v15",
+      "logical_name": "cost_map_scale_summary.csv",
+      "sha256": "6bab4bf69a411551dc8cfa4e9c56fdbef9f78d5de21f20f2113d3ff27a49da85",
+      "size_bytes": 3180,
+      "source_id": "map_scale_source"
+    },
+    {
+      "artifact_id": "descriptive-2026-07-21",
+      "logical_name": "paper_observed_risk_and_priority_by_category.csv",
+      "sha256": "101371c16e0aee6613ae2d1a4114c4135cf8f417a45d528fac24e7f2aef43e17",
+      "size_bytes": 335,
+      "source_id": "observed_risk_priority"
+    },
+    {
+      "artifact_id": "priority-weight-sensitivity-2026-08-08",
+      "logical_name": "observed_recorded_risk_weights_normalized.csv",
+      "sha256": "49e7ef9198c2cac72470ec24e759a878a90b07203848a7c3cf0f433992590680",
+      "size_bytes": 1752,
+      "source_id": "observed_risk_weights"
+    },
+    {
+      "artifact_id": "out-of-sample-seeds-321-325",
+      "logical_name": "policy_scores_all_runs.csv",
+      "sha256": "da4e121f14b13ad41cff23cdf238bce2cf9c1163bcf7fa6a55edba66c700794f",
+      "size_bytes": 104931,
+      "source_id": "oos_scores"
+    },
+    {
+      "artifact_id": "primary-style-v15",
+      "logical_name": "policy_parameters_and_realized_service_all_roles_seed321.csv",
+      "sha256": "1b787e4e954bf69df9f97f835a9a3bdce486822590e5e8fe71cb9dc4e480ae8c",
+      "size_bytes": 56437,
+      "source_id": "parameters_source"
+    },
+    {
+      "artifact_id": "priority-weight-sensitivity-2026-08-08",
+      "logical_name": "named_policy_ratios_to_historical.csv",
+      "sha256": "6399dce7fd5cf170dd82d0b4a40c097b184ffbadf72222a5b3849d82e3c06a50",
+      "size_bytes": 8916,
+      "source_id": "priority_named"
+    },
+    {
+      "artifact_id": "priority-weight-sensitivity-2026-08-08",
+      "logical_name": "ordered_weight_ratio_summary.csv",
+      "sha256": "60099efbe4cb446e70adc040748dd4b590d9be06a1c1b429cbc8ebaf4e9cf054",
+      "size_bytes": 1594,
+      "source_id": "priority_random_summary"
+    },
+    {
+      "artifact_id": "priority-weight-sensitivity-2026-08-08",
+      "logical_name": "named_priority_weight_specifications.csv",
+      "sha256": "65ffcec776db23f2058a26cf991ef2decda8cbce8d3798cc9873fc15d3969373",
+      "size_bytes": 1229,
+      "source_id": "priority_specs"
+    },
+    {
+      "artifact_id": "primary-style-v15",
+      "logical_name": "primary_qnehvi_search_cloud_plotted_historical_pct.csv",
+      "sha256": "8956da842019a18be75aa5b65f7dd057f47686ccaa6a08d12bf82e0e36f09039",
+      "size_bytes": 2947853,
+      "source_id": "search_cloud_source"
+    },
+    {
+      "artifact_id": "search-progress-2026-08-06",
+      "logical_name": "primary_bo_search_progress.csv",
+      "sha256": "aec3572ba7f1ee12317b522f4bb9d432d91f2a67c1ed404889e0b4336b4a4f96",
+      "size_bytes": 122090,
+      "source_id": "search_progress_source"
+    },
+    {
+      "artifact_id": "priority-weight-sensitivity-2026-08-08",
+      "logical_name": "selected_borough_roles.csv",
+      "sha256": "196c877d4c095e087dbc7762e5c9f7b88af93edbdf84862473ea3fd827112f99",
+      "size_bytes": 718,
+      "source_id": "selected_borough_roles"
+    },
+    {
+      "artifact_id": "primary-style-v15",
+      "logical_name": "primary_selection_policy_means_historical_pct.csv",
+      "sha256": "379a4c2cebbaf9e892b3d78cf4084692c46344bd37554d9e301647990f69e73f",
+      "size_bytes": 187443,
+      "source_id": "selection_means"
+    },
+    {
+      "artifact_id": "min20-service-floor-selection-2026-08-10",
+      "logical_name": "policy_cell_selection_means.csv",
+      "sha256": "a356225688f666559ca2dc188bce89e3a4b754cb70ad1f25f9fdf1f55ba31022",
+      "size_bytes": 2531646,
+      "source_id": "min20_policy_cell_selection_means"
+    },
+    {
+      "artifact_id": "table-1-normalization",
+      "logical_name": "paper_oos_contemporaneous_history_table.metadata.json",
+      "sha256": "39fc32a4e92cd943808ea7a0d591143581f6659f87fad11dc12f4bea8ceed506",
+      "size_bytes": 3971,
+      "source_id": "table_metadata"
+    },
+    {
+      "artifact_id": "descriptive-2026-07-21",
+      "logical_name": "weekly_inspections.csv",
+      "sha256": "7e6da9160d69c368afe26ec20b9b1d1e6958e7d01d51e22d85b4cd05901a7fe5",
+      "size_bytes": 2613,
+      "source_id": "weekly_inspections"
+    },
+    {
+      "artifact_id": "descriptive-2026-07-21",
+      "logical_name": "weekly_service_requests.csv",
+      "sha256": "e50eff3bd4f4f65507e3dfcfb5d368dca634408fdfe4a8210727f63355be9d37",
+      "size_bytes": 2663,
+      "source_id": "weekly_requests"
+    },
+    {
+      "artifact_id": "appendix-composite-final-2026-08-10",
+      "logical_name": "paper_figure7_search_all_historical_ratio.csv",
+      "sha256": "ab8bade255090d22fb4ee88988c7b13fc3ee9b13f5e8e9fc5fe6f3756cf01fc8",
+      "size_bytes": 13395509,
+      "source_id": "appendix_frontier_search"
+    },
+    {
+      "artifact_id": "appendix-composite-final-2026-08-10",
+      "logical_name": "paper_figure7_locked_inference_means_historical_ratio.csv",
+      "sha256": "86d215d338232c855112220aacb8ddc2e10aa36b86628ef5ef9063622ca48cec",
+      "size_bytes": 15456,
+      "source_id": "appendix_frontier_inference_means"
+    },
+    {
+      "artifact_id": "appendix-composite-final-2026-08-10",
+      "logical_name": "paper_figure7_historical_denominators.csv",
+      "sha256": "678dfca753dca0cee7c07ca5c3bd5b2fcc86bce5f5b529018adf66988c1b04dd",
+      "size_bytes": 411,
+      "source_id": "appendix_frontier_historical_reference"
+    },
+    {
+      "artifact_id": "appendix-composite-final-2026-08-10",
+      "logical_name": "paper_d200_vs_d100_median_cell_service_comparison.csv",
+      "sha256": "6930db6f4c4f0d16342c89a249a76c0e3e0f46e1f4299b6ebda984bd0b8deac4",
+      "size_bytes": 94485,
+      "source_id": "d100_d200_median_cell_comparison"
+    },
+    {
+      "artifact_id": "appendix-composite-final-2026-08-10",
+      "logical_name": "paper_d200_cell_service_vs_history.csv",
+      "sha256": "13175c00408e5f5a85cb16452181f329ecb83099169272ea74fedc188a15ac90",
+      "size_bytes": 157973,
+      "source_id": "d200_cell_history"
+    }
+  ],
+  "source_snapshot_date": "2026-08-10"
+}

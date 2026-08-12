@@ -1,0 +1,601 @@
+category,borough,bin_left_days,bin_right_days,right_edge_inclusive,row_count,density_per_day
+Hazard,Bronx,0.0,1.0,False,1999,0.2789951151430565
+Hazard,Bronx,1.0,2.0,False,885,0.12351709699930216
+Hazard,Bronx,2.0,3.0,False,755,0.10537334263782275
+Hazard,Bronx,3.0,4.0,False,524,0.07313328681088625
+Hazard,Bronx,4.0,5.0,False,386,0.053872993719469645
+Hazard,Bronx,5.0,6.0,False,489,0.06824842986741103
+Hazard,Bronx,6.0,7.0,False,300,0.0418702023726448
+Hazard,Bronx,7.0,8.0,False,201,0.028053035589672017
+Hazard,Bronx,8.0,9.0,False,134,0.01870202372644801
+Hazard,Bronx,9.0,10.0,False,149,0.02079553384508025
+Hazard,Bronx,10.0,11.0,False,114,0.015910676901605025
+Hazard,Bronx,11.0,12.0,False,109,0.015212840195394277
+Hazard,Bronx,12.0,13.0,False,95,0.013258897418004187
+Hazard,Bronx,13.0,14.0,False,104,0.01451500348918353
+Hazard,Bronx,14.0,15.0,False,67,0.009351011863224006
+Hazard,Bronx,15.0,16.0,False,69,0.009630146545708304
+Hazard,Bronx,16.0,17.0,False,61,0.00851360781577111
+Hazard,Bronx,17.0,18.0,False,74,0.01032798325191905
+Hazard,Bronx,18.0,19.0,False,35,0.004884856943475227
+Hazard,Bronx,19.0,20.0,False,49,0.0068387997208653175
+Hazard,Bronx,20.0,21.0,False,60,0.00837404047452896
+Hazard,Bronx,21.0,22.0,False,47,0.006559665038381019
+Hazard,Bronx,22.0,23.0,False,47,0.006559665038381019
+Hazard,Bronx,23.0,24.0,False,37,0.005163991625959525
+Hazard,Bronx,24.0,25.0,False,39,0.005443126308443824
+Hazard,Bronx,25.0,26.0,False,27,0.003768318213538032
+Hazard,Bronx,26.0,27.0,False,29,0.004047452896022331
+Hazard,Bronx,27.0,28.0,False,33,0.004605722260990928
+Hazard,Bronx,28.0,29.0,False,23,0.003210048848569435
+Hazard,Bronx,29.0,30.0,False,28,0.003907885554780182
+Hazard,Bronx,30.0,31.0,False,10,0.0013956734124214933
+Hazard,Bronx,31.0,32.0,False,20,0.0027913468248429866
+Hazard,Bronx,32.0,33.0,False,14,0.001953942777390091
+Hazard,Bronx,33.0,34.0,False,9,0.001256106071179344
+Hazard,Bronx,34.0,35.0,False,24,0.003349616189811584
+Hazard,Bronx,35.0,36.0,False,6,0.000837404047452896
+Hazard,Bronx,36.0,37.0,False,10,0.0013956734124214933
+Hazard,Bronx,37.0,38.0,False,6,0.000837404047452896
+Hazard,Bronx,38.0,39.0,False,12,0.001674808094905792
+Hazard,Bronx,39.0,40.0,False,3,0.000418702023726448
+Hazard,Bronx,40.0,41.0,False,10,0.0013956734124214933
+Hazard,Bronx,41.0,42.0,False,17,0.0023726448011165387
+Hazard,Bronx,42.0,43.0,False,6,0.000837404047452896
+Hazard,Bronx,43.0,44.0,False,9,0.001256106071179344
+Hazard,Bronx,44.0,45.0,False,5,0.0006978367062107466
+Hazard,Bronx,45.0,46.0,False,9,0.001256106071179344
+Hazard,Bronx,46.0,47.0,False,7,0.0009769713886950454
+Hazard,Bronx,47.0,48.0,False,7,0.0009769713886950454
+Hazard,Bronx,48.0,49.0,False,7,0.0009769713886950454
+Hazard,Bronx,49.0,50.0,True,5,0.0006978367062107466
+Hazard,Manhattan,0.0,1.0,False,2240,0.5425042383143618
+Hazard,Manhattan,1.0,2.0,False,657,0.15911843061273917
+Hazard,Manhattan,2.0,3.0,False,359,0.08694599176556067
+Hazard,Manhattan,3.0,4.0,False,154,0.037297166384112374
+Hazard,Manhattan,4.0,5.0,False,112,0.02712521191571809
+Hazard,Manhattan,5.0,6.0,False,103,0.02494550738677646
+Hazard,Manhattan,6.0,7.0,False,115,0.02785178009203197
+Hazard,Manhattan,7.0,8.0,False,49,0.011867280213126665
+Hazard,Manhattan,8.0,9.0,False,46,0.011140712036812788
+Hazard,Manhattan,9.0,10.0,False,13,0.0031484620973601355
+Hazard,Manhattan,10.0,11.0,False,28,0.006781302978929523
+Hazard,Manhattan,11.0,12.0,False,12,0.00290627270525551
+Hazard,Manhattan,12.0,13.0,False,13,0.0031484620973601355
+Hazard,Manhattan,13.0,14.0,False,14,0.0033906514894647614
+Hazard,Manhattan,14.0,15.0,False,9,0.0021797045289416324
+Hazard,Manhattan,15.0,16.0,False,15,0.0036328408815693874
+Hazard,Manhattan,16.0,17.0,False,9,0.0021797045289416324
+Hazard,Manhattan,17.0,18.0,False,14,0.0033906514894647614
+Hazard,Manhattan,18.0,19.0,False,15,0.0036328408815693874
+Hazard,Manhattan,19.0,20.0,False,9,0.0021797045289416324
+Hazard,Manhattan,20.0,21.0,False,8,0.0019375151368370065
+Hazard,Manhattan,21.0,22.0,False,10,0.002421893921046258
+Hazard,Manhattan,22.0,23.0,False,10,0.002421893921046258
+Hazard,Manhattan,23.0,24.0,False,6,0.001453136352627755
+Hazard,Manhattan,24.0,25.0,False,5,0.001210946960523129
+Hazard,Manhattan,25.0,26.0,False,6,0.001453136352627755
+Hazard,Manhattan,26.0,27.0,False,4,0.0009687575684185032
+Hazard,Manhattan,27.0,28.0,False,3,0.0007265681763138775
+Hazard,Manhattan,28.0,29.0,False,6,0.001453136352627755
+Hazard,Manhattan,29.0,30.0,False,4,0.0009687575684185032
+Hazard,Manhattan,30.0,31.0,False,6,0.001453136352627755
+Hazard,Manhattan,31.0,32.0,False,7,0.0016953257447323807
+Hazard,Manhattan,32.0,33.0,False,3,0.0007265681763138775
+Hazard,Manhattan,33.0,34.0,False,5,0.001210946960523129
+Hazard,Manhattan,34.0,35.0,False,3,0.0007265681763138775
+Hazard,Manhattan,35.0,36.0,False,5,0.001210946960523129
+Hazard,Manhattan,36.0,37.0,False,1,0.0002421893921046258
+Hazard,Manhattan,37.0,38.0,False,3,0.0007265681763138775
+Hazard,Manhattan,38.0,39.0,False,1,0.0002421893921046258
+Hazard,Manhattan,39.0,40.0,False,2,0.0004843787842092516
+Hazard,Manhattan,40.0,41.0,False,7,0.0016953257447323807
+Hazard,Manhattan,41.0,42.0,False,4,0.0009687575684185032
+Hazard,Manhattan,42.0,43.0,False,3,0.0007265681763138775
+Hazard,Manhattan,43.0,44.0,False,3,0.0007265681763138775
+Hazard,Manhattan,44.0,45.0,False,2,0.0004843787842092516
+Hazard,Manhattan,45.0,46.0,False,3,0.0007265681763138775
+Hazard,Manhattan,46.0,47.0,False,3,0.0007265681763138775
+Hazard,Manhattan,47.0,48.0,False,6,0.001453136352627755
+Hazard,Manhattan,48.0,49.0,False,11,0.002664083313150884
+Hazard,Manhattan,49.0,50.0,True,3,0.0007265681763138775
+Illegal Tree Damage,Bronx,0.0,1.0,False,48,0.07250755287009064
+Illegal Tree Damage,Bronx,1.0,2.0,False,31,0.04682779456193353
+Illegal Tree Damage,Bronx,2.0,3.0,False,28,0.04229607250755287
+Illegal Tree Damage,Bronx,3.0,4.0,False,21,0.03172205438066465
+Illegal Tree Damage,Bronx,4.0,5.0,False,27,0.04078549848942598
+Illegal Tree Damage,Bronx,5.0,6.0,False,33,0.04984894259818731
+Illegal Tree Damage,Bronx,6.0,7.0,False,17,0.0256797583081571
+Illegal Tree Damage,Bronx,7.0,8.0,False,25,0.0377643504531722
+Illegal Tree Damage,Bronx,8.0,9.0,False,16,0.02416918429003021
+Illegal Tree Damage,Bronx,9.0,10.0,False,25,0.0377643504531722
+Illegal Tree Damage,Bronx,10.0,11.0,False,14,0.021148036253776436
+Illegal Tree Damage,Bronx,11.0,12.0,False,19,0.028700906344410877
+Illegal Tree Damage,Bronx,12.0,13.0,False,22,0.03323262839879154
+Illegal Tree Damage,Bronx,13.0,14.0,False,13,0.019637462235649546
+Illegal Tree Damage,Bronx,14.0,15.0,False,14,0.021148036253776436
+Illegal Tree Damage,Bronx,15.0,16.0,False,18,0.027190332326283987
+Illegal Tree Damage,Bronx,16.0,17.0,False,10,0.015105740181268883
+Illegal Tree Damage,Bronx,17.0,18.0,False,15,0.022658610271903322
+Illegal Tree Damage,Bronx,18.0,19.0,False,13,0.019637462235649546
+Illegal Tree Damage,Bronx,19.0,20.0,False,11,0.01661631419939577
+Illegal Tree Damage,Bronx,20.0,21.0,False,14,0.021148036253776436
+Illegal Tree Damage,Bronx,21.0,22.0,False,11,0.01661631419939577
+Illegal Tree Damage,Bronx,22.0,23.0,False,10,0.015105740181268883
+Illegal Tree Damage,Bronx,23.0,24.0,False,7,0.010574018126888218
+Illegal Tree Damage,Bronx,24.0,25.0,False,9,0.013595166163141994
+Illegal Tree Damage,Bronx,25.0,26.0,False,12,0.01812688821752266
+Illegal Tree Damage,Bronx,26.0,27.0,False,17,0.0256797583081571
+Illegal Tree Damage,Bronx,27.0,28.0,False,11,0.01661631419939577
+Illegal Tree Damage,Bronx,28.0,29.0,False,12,0.01812688821752266
+Illegal Tree Damage,Bronx,29.0,30.0,False,7,0.010574018126888218
+Illegal Tree Damage,Bronx,30.0,31.0,False,7,0.010574018126888218
+Illegal Tree Damage,Bronx,31.0,32.0,False,2,0.0030211480362537764
+Illegal Tree Damage,Bronx,32.0,33.0,False,6,0.00906344410876133
+Illegal Tree Damage,Bronx,33.0,34.0,False,11,0.01661631419939577
+Illegal Tree Damage,Bronx,34.0,35.0,False,3,0.004531722054380665
+Illegal Tree Damage,Bronx,35.0,36.0,False,3,0.004531722054380665
+Illegal Tree Damage,Bronx,36.0,37.0,False,4,0.006042296072507553
+Illegal Tree Damage,Bronx,37.0,38.0,False,3,0.004531722054380665
+Illegal Tree Damage,Bronx,38.0,39.0,False,7,0.010574018126888218
+Illegal Tree Damage,Bronx,39.0,40.0,False,8,0.012084592145015106
+Illegal Tree Damage,Bronx,40.0,41.0,False,10,0.015105740181268883
+Illegal Tree Damage,Bronx,41.0,42.0,False,7,0.010574018126888218
+Illegal Tree Damage,Bronx,42.0,43.0,False,7,0.010574018126888218
+Illegal Tree Damage,Bronx,43.0,44.0,False,9,0.013595166163141994
+Illegal Tree Damage,Bronx,44.0,45.0,False,5,0.0075528700906344415
+Illegal Tree Damage,Bronx,45.0,46.0,False,10,0.015105740181268883
+Illegal Tree Damage,Bronx,46.0,47.0,False,13,0.019637462235649546
+Illegal Tree Damage,Bronx,47.0,48.0,False,10,0.015105740181268883
+Illegal Tree Damage,Bronx,48.0,49.0,False,2,0.0030211480362537764
+Illegal Tree Damage,Bronx,49.0,50.0,True,5,0.0075528700906344415
+Illegal Tree Damage,Manhattan,0.0,1.0,False,151,0.13280562884784522
+Illegal Tree Damage,Manhattan,1.0,2.0,False,135,0.11873350923482849
+Illegal Tree Damage,Manhattan,2.0,3.0,False,99,0.0870712401055409
+Illegal Tree Damage,Manhattan,3.0,4.0,False,72,0.0633245382585752
+Illegal Tree Damage,Manhattan,4.0,5.0,False,81,0.0712401055408971
+Illegal Tree Damage,Manhattan,5.0,6.0,False,58,0.051011433597185574
+Illegal Tree Damage,Manhattan,6.0,7.0,False,58,0.051011433597185574
+Illegal Tree Damage,Manhattan,7.0,8.0,False,30,0.026385224274406333
+Illegal Tree Damage,Manhattan,8.0,9.0,False,32,0.028144239226033423
+Illegal Tree Damage,Manhattan,9.0,10.0,False,54,0.047493403693931395
+Illegal Tree Damage,Manhattan,10.0,11.0,False,26,0.022867194371152155
+Illegal Tree Damage,Manhattan,11.0,12.0,False,43,0.03781882145998241
+Illegal Tree Damage,Manhattan,12.0,13.0,False,21,0.018469656992084433
+Illegal Tree Damage,Manhattan,13.0,14.0,False,32,0.028144239226033423
+Illegal Tree Damage,Manhattan,14.0,15.0,False,37,0.032541776605101144
+Illegal Tree Damage,Manhattan,15.0,16.0,False,12,0.010554089709762533
+Illegal Tree Damage,Manhattan,16.0,17.0,False,17,0.014951627088830254
+Illegal Tree Damage,Manhattan,17.0,18.0,False,7,0.006156552330694811
+Illegal Tree Damage,Manhattan,18.0,19.0,False,11,0.009674582233948988
+Illegal Tree Damage,Manhattan,19.0,20.0,False,12,0.010554089709762533
+Illegal Tree Damage,Manhattan,20.0,21.0,False,14,0.012313104661389622
+Illegal Tree Damage,Manhattan,21.0,22.0,False,13,0.011433597185576077
+Illegal Tree Damage,Manhattan,22.0,23.0,False,5,0.0043975373790677225
+Illegal Tree Damage,Manhattan,23.0,24.0,False,7,0.006156552330694811
+Illegal Tree Damage,Manhattan,24.0,25.0,False,7,0.006156552330694811
+Illegal Tree Damage,Manhattan,25.0,26.0,False,10,0.008795074758135445
+Illegal Tree Damage,Manhattan,26.0,27.0,False,3,0.002638522427440633
+Illegal Tree Damage,Manhattan,27.0,28.0,False,7,0.006156552330694811
+Illegal Tree Damage,Manhattan,28.0,29.0,False,7,0.006156552330694811
+Illegal Tree Damage,Manhattan,29.0,30.0,False,7,0.006156552330694811
+Illegal Tree Damage,Manhattan,30.0,31.0,False,8,0.007036059806508356
+Illegal Tree Damage,Manhattan,31.0,32.0,False,7,0.006156552330694811
+Illegal Tree Damage,Manhattan,32.0,33.0,False,1,0.0008795074758135445
+Illegal Tree Damage,Manhattan,33.0,34.0,False,5,0.0043975373790677225
+Illegal Tree Damage,Manhattan,34.0,35.0,False,3,0.002638522427440633
+Illegal Tree Damage,Manhattan,35.0,36.0,False,9,0.0079155672823219
+Illegal Tree Damage,Manhattan,36.0,37.0,False,2,0.001759014951627089
+Illegal Tree Damage,Manhattan,37.0,38.0,False,8,0.007036059806508356
+Illegal Tree Damage,Manhattan,38.0,39.0,False,1,0.0008795074758135445
+Illegal Tree Damage,Manhattan,39.0,40.0,False,2,0.001759014951627089
+Illegal Tree Damage,Manhattan,40.0,41.0,False,3,0.002638522427440633
+Illegal Tree Damage,Manhattan,41.0,42.0,False,3,0.002638522427440633
+Illegal Tree Damage,Manhattan,42.0,43.0,False,2,0.001759014951627089
+Illegal Tree Damage,Manhattan,43.0,44.0,False,0,0.0
+Illegal Tree Damage,Manhattan,44.0,45.0,False,1,0.0008795074758135445
+Illegal Tree Damage,Manhattan,45.0,46.0,False,2,0.001759014951627089
+Illegal Tree Damage,Manhattan,46.0,47.0,False,3,0.002638522427440633
+Illegal Tree Damage,Manhattan,47.0,48.0,False,1,0.0008795074758135445
+Illegal Tree Damage,Manhattan,48.0,49.0,False,2,0.001759014951627089
+Illegal Tree Damage,Manhattan,49.0,50.0,True,6,0.005277044854881266
+Other,Bronx,0.0,1.0,False,16,0.06896551724137931
+Other,Bronx,1.0,2.0,False,17,0.07327586206896551
+Other,Bronx,2.0,3.0,False,8,0.034482758620689655
+Other,Bronx,3.0,4.0,False,11,0.04741379310344827
+Other,Bronx,4.0,5.0,False,5,0.021551724137931036
+Other,Bronx,5.0,6.0,False,13,0.05603448275862069
+Other,Bronx,6.0,7.0,False,10,0.04310344827586207
+Other,Bronx,7.0,8.0,False,10,0.04310344827586207
+Other,Bronx,8.0,9.0,False,9,0.03879310344827586
+Other,Bronx,9.0,10.0,False,6,0.02586206896551724
+Other,Bronx,10.0,11.0,False,2,0.008620689655172414
+Other,Bronx,11.0,12.0,False,6,0.02586206896551724
+Other,Bronx,12.0,13.0,False,17,0.07327586206896551
+Other,Bronx,13.0,14.0,False,3,0.01293103448275862
+Other,Bronx,14.0,15.0,False,3,0.01293103448275862
+Other,Bronx,15.0,16.0,False,4,0.017241379310344827
+Other,Bronx,16.0,17.0,False,7,0.03017241379310345
+Other,Bronx,17.0,18.0,False,2,0.008620689655172414
+Other,Bronx,18.0,19.0,False,3,0.01293103448275862
+Other,Bronx,19.0,20.0,False,2,0.008620689655172414
+Other,Bronx,20.0,21.0,False,4,0.017241379310344827
+Other,Bronx,21.0,22.0,False,5,0.021551724137931036
+Other,Bronx,22.0,23.0,False,6,0.02586206896551724
+Other,Bronx,23.0,24.0,False,3,0.01293103448275862
+Other,Bronx,24.0,25.0,False,3,0.01293103448275862
+Other,Bronx,25.0,26.0,False,2,0.008620689655172414
+Other,Bronx,26.0,27.0,False,1,0.004310344827586207
+Other,Bronx,27.0,28.0,False,2,0.008620689655172414
+Other,Bronx,28.0,29.0,False,2,0.008620689655172414
+Other,Bronx,29.0,30.0,False,4,0.017241379310344827
+Other,Bronx,30.0,31.0,False,2,0.008620689655172414
+Other,Bronx,31.0,32.0,False,4,0.017241379310344827
+Other,Bronx,32.0,33.0,False,5,0.021551724137931036
+Other,Bronx,33.0,34.0,False,3,0.01293103448275862
+Other,Bronx,34.0,35.0,False,4,0.017241379310344827
+Other,Bronx,35.0,36.0,False,5,0.021551724137931036
+Other,Bronx,36.0,37.0,False,1,0.004310344827586207
+Other,Bronx,37.0,38.0,False,1,0.004310344827586207
+Other,Bronx,38.0,39.0,False,1,0.004310344827586207
+Other,Bronx,39.0,40.0,False,2,0.008620689655172414
+Other,Bronx,40.0,41.0,False,2,0.008620689655172414
+Other,Bronx,41.0,42.0,False,5,0.021551724137931036
+Other,Bronx,42.0,43.0,False,3,0.01293103448275862
+Other,Bronx,43.0,44.0,False,2,0.008620689655172414
+Other,Bronx,44.0,45.0,False,1,0.004310344827586207
+Other,Bronx,45.0,46.0,False,3,0.01293103448275862
+Other,Bronx,46.0,47.0,False,0,0.0
+Other,Bronx,47.0,48.0,False,0,0.0
+Other,Bronx,48.0,49.0,False,0,0.0
+Other,Bronx,49.0,50.0,True,2,0.008620689655172414
+Other,Manhattan,0.0,1.0,False,21,0.15217391304347827
+Other,Manhattan,1.0,2.0,False,12,0.08695652173913043
+Other,Manhattan,2.0,3.0,False,23,0.16666666666666666
+Other,Manhattan,3.0,4.0,False,26,0.18840579710144928
+Other,Manhattan,4.0,5.0,False,5,0.036231884057971016
+Other,Manhattan,5.0,6.0,False,4,0.028985507246376812
+Other,Manhattan,6.0,7.0,False,2,0.014492753623188406
+Other,Manhattan,7.0,8.0,False,3,0.021739130434782608
+Other,Manhattan,8.0,9.0,False,1,0.007246376811594203
+Other,Manhattan,9.0,10.0,False,3,0.021739130434782608
+Other,Manhattan,10.0,11.0,False,2,0.014492753623188406
+Other,Manhattan,11.0,12.0,False,8,0.057971014492753624
+Other,Manhattan,12.0,13.0,False,0,0.0
+Other,Manhattan,13.0,14.0,False,1,0.007246376811594203
+Other,Manhattan,14.0,15.0,False,0,0.0
+Other,Manhattan,15.0,16.0,False,0,0.0
+Other,Manhattan,16.0,17.0,False,0,0.0
+Other,Manhattan,17.0,18.0,False,4,0.028985507246376812
+Other,Manhattan,18.0,19.0,False,0,0.0
+Other,Manhattan,19.0,20.0,False,1,0.007246376811594203
+Other,Manhattan,20.0,21.0,False,0,0.0
+Other,Manhattan,21.0,22.0,False,1,0.007246376811594203
+Other,Manhattan,22.0,23.0,False,0,0.0
+Other,Manhattan,23.0,24.0,False,1,0.007246376811594203
+Other,Manhattan,24.0,25.0,False,1,0.007246376811594203
+Other,Manhattan,25.0,26.0,False,2,0.014492753623188406
+Other,Manhattan,26.0,27.0,False,0,0.0
+Other,Manhattan,27.0,28.0,False,0,0.0
+Other,Manhattan,28.0,29.0,False,1,0.007246376811594203
+Other,Manhattan,29.0,30.0,False,0,0.0
+Other,Manhattan,30.0,31.0,False,0,0.0
+Other,Manhattan,31.0,32.0,False,1,0.007246376811594203
+Other,Manhattan,32.0,33.0,False,0,0.0
+Other,Manhattan,33.0,34.0,False,1,0.007246376811594203
+Other,Manhattan,34.0,35.0,False,3,0.021739130434782608
+Other,Manhattan,35.0,36.0,False,0,0.0
+Other,Manhattan,36.0,37.0,False,0,0.0
+Other,Manhattan,37.0,38.0,False,1,0.007246376811594203
+Other,Manhattan,38.0,39.0,False,0,0.0
+Other,Manhattan,39.0,40.0,False,0,0.0
+Other,Manhattan,40.0,41.0,False,0,0.0
+Other,Manhattan,41.0,42.0,False,3,0.021739130434782608
+Other,Manhattan,42.0,43.0,False,0,0.0
+Other,Manhattan,43.0,44.0,False,1,0.007246376811594203
+Other,Manhattan,44.0,45.0,False,1,0.007246376811594203
+Other,Manhattan,45.0,46.0,False,4,0.028985507246376812
+Other,Manhattan,46.0,47.0,False,0,0.0
+Other,Manhattan,47.0,48.0,False,0,0.0
+Other,Manhattan,48.0,49.0,False,1,0.007246376811594203
+Other,Manhattan,49.0,50.0,True,0,0.0
+Prune,Bronx,0.0,1.0,False,129,0.03995044905543512
+Prune,Bronx,1.0,2.0,False,162,0.050170331371941775
+Prune,Bronx,2.0,3.0,False,161,0.049860637968411274
+Prune,Bronx,3.0,4.0,False,194,0.06008052028491793
+Prune,Bronx,4.0,5.0,False,138,0.04273768968720966
+Prune,Bronx,5.0,6.0,False,152,0.04707339733663673
+Prune,Bronx,6.0,7.0,False,138,0.04273768968720966
+Prune,Bronx,7.0,8.0,False,131,0.04056983586249613
+Prune,Bronx,8.0,9.0,False,105,0.032517807370703006
+Prune,Bronx,9.0,10.0,False,76,0.023536698668318364
+Prune,Bronx,10.0,11.0,False,102,0.03158872716011149
+Prune,Bronx,11.0,12.0,False,90,0.027872406317745433
+Prune,Bronx,12.0,13.0,False,88,0.02725301951068442
+Prune,Bronx,13.0,14.0,False,85,0.026323939300092906
+Prune,Bronx,14.0,15.0,False,84,0.026014245896562403
+Prune,Bronx,15.0,16.0,False,68,0.021059151440074326
+Prune,Bronx,16.0,17.0,False,62,0.0192009910188913
+Prune,Bronx,17.0,18.0,False,47,0.014555589965933726
+Prune,Bronx,18.0,19.0,False,50,0.01548467017652524
+Prune,Bronx,19.0,20.0,False,44,0.01362650975534221
+Prune,Bronx,20.0,21.0,False,48,0.01486528336946423
+Prune,Bronx,21.0,22.0,False,42,0.013007122948281201
+Prune,Bronx,22.0,23.0,False,59,0.018271910808299784
+Prune,Bronx,23.0,24.0,False,46,0.01424589656240322
+Prune,Bronx,24.0,25.0,False,40,0.012387736141220192
+Prune,Bronx,25.0,26.0,False,35,0.010839269123567669
+Prune,Bronx,26.0,27.0,False,36,0.011148962527098173
+Prune,Bronx,27.0,28.0,False,47,0.014555589965933726
+Prune,Bronx,28.0,29.0,False,42,0.013007122948281201
+Prune,Bronx,29.0,30.0,False,36,0.011148962527098173
+Prune,Bronx,30.0,31.0,False,35,0.010839269123567669
+Prune,Bronx,31.0,32.0,False,35,0.010839269123567669
+Prune,Bronx,32.0,33.0,False,32,0.009910188912976153
+Prune,Bronx,33.0,34.0,False,48,0.01486528336946423
+Prune,Bronx,34.0,35.0,False,53,0.016413750387116753
+Prune,Bronx,35.0,36.0,False,37,0.011458655930628678
+Prune,Bronx,36.0,37.0,False,38,0.011768349334159182
+Prune,Bronx,37.0,38.0,False,29,0.00898110870238464
+Prune,Bronx,38.0,39.0,False,35,0.010839269123567669
+Prune,Bronx,39.0,40.0,False,30,0.009290802105915144
+Prune,Bronx,40.0,41.0,False,33,0.010219882316506659
+Prune,Bronx,41.0,42.0,False,51,0.015794363580055745
+Prune,Bronx,42.0,43.0,False,43,0.013316816351811707
+Prune,Bronx,43.0,44.0,False,36,0.011148962527098173
+Prune,Bronx,44.0,45.0,False,25,0.00774233508826262
+Prune,Bronx,45.0,46.0,False,23,0.00712294828120161
+Prune,Bronx,46.0,47.0,False,26,0.008052028491793125
+Prune,Bronx,47.0,48.0,False,28,0.008671415298854134
+Prune,Bronx,48.0,49.0,False,27,0.00836172189532363
+Prune,Bronx,49.0,50.0,True,28,0.008671415298854134
+Prune,Manhattan,0.0,1.0,False,307,0.11408398364920104
+Prune,Manhattan,1.0,2.0,False,249,0.09253065774804906
+Prune,Manhattan,2.0,3.0,False,181,0.06726124117428466
+Prune,Manhattan,3.0,4.0,False,170,0.06317354143441099
+Prune,Manhattan,4.0,5.0,False,151,0.056112969156447416
+Prune,Manhattan,5.0,6.0,False,153,0.056856187290969896
+Prune,Manhattan,6.0,7.0,False,135,0.05016722408026756
+Prune,Manhattan,7.0,8.0,False,99,0.03678929765886288
+Prune,Manhattan,8.0,9.0,False,61,0.022668153102935712
+Prune,Manhattan,9.0,10.0,False,52,0.01932367149758454
+Prune,Manhattan,10.0,11.0,False,59,0.021924934968413228
+Prune,Manhattan,11.0,12.0,False,54,0.020066889632107024
+Prune,Manhattan,12.0,13.0,False,78,0.028985507246376812
+Prune,Manhattan,13.0,14.0,False,50,0.01858045336306206
+Prune,Manhattan,14.0,15.0,False,87,0.032329988851727984
+Prune,Manhattan,15.0,16.0,False,42,0.01560758082497213
+Prune,Manhattan,16.0,17.0,False,45,0.016722408026755852
+Prune,Manhattan,17.0,18.0,False,41,0.015235971757710888
+Prune,Manhattan,18.0,19.0,False,30,0.011148272017837236
+Prune,Manhattan,19.0,20.0,False,35,0.013006317354143442
+Prune,Manhattan,20.0,21.0,False,33,0.012263099219620958
+Prune,Manhattan,21.0,22.0,False,37,0.013749535488665924
+Prune,Manhattan,22.0,23.0,False,24,0.008918617614269788
+Prune,Manhattan,23.0,24.0,False,25,0.00929022668153103
+Prune,Manhattan,24.0,25.0,False,18,0.006688963210702341
+Prune,Manhattan,25.0,26.0,False,49,0.018208844295800816
+Prune,Manhattan,26.0,27.0,False,26,0.00966183574879227
+Prune,Manhattan,27.0,28.0,False,39,0.014492753623188406
+Prune,Manhattan,28.0,29.0,False,24,0.008918617614269788
+Prune,Manhattan,29.0,30.0,False,17,0.0063173541434411
+Prune,Manhattan,30.0,31.0,False,18,0.006688963210702341
+Prune,Manhattan,31.0,32.0,False,19,0.007060572277963582
+Prune,Manhattan,32.0,33.0,False,18,0.006688963210702341
+Prune,Manhattan,33.0,34.0,False,36,0.013377926421404682
+Prune,Manhattan,34.0,35.0,False,28,0.010405053883314752
+Prune,Manhattan,35.0,36.0,False,10,0.0037160906726124115
+Prune,Manhattan,36.0,37.0,False,14,0.005202526941657376
+Prune,Manhattan,37.0,38.0,False,24,0.008918617614269788
+Prune,Manhattan,38.0,39.0,False,14,0.005202526941657376
+Prune,Manhattan,39.0,40.0,False,24,0.008918617614269788
+Prune,Manhattan,40.0,41.0,False,21,0.007803790412486065
+Prune,Manhattan,41.0,42.0,False,12,0.004459308807134894
+Prune,Manhattan,42.0,43.0,False,11,0.004087699739873653
+Prune,Manhattan,43.0,44.0,False,14,0.005202526941657376
+Prune,Manhattan,44.0,45.0,False,3,0.0011148272017837235
+Prune,Manhattan,45.0,46.0,False,10,0.0037160906726124115
+Prune,Manhattan,46.0,47.0,False,6,0.002229654403567447
+Prune,Manhattan,47.0,48.0,False,15,0.005574136008918618
+Prune,Manhattan,48.0,49.0,False,15,0.005574136008918618
+Prune,Manhattan,49.0,50.0,True,8,0.0029728725380899295
+Remove Tree,Bronx,0.0,1.0,False,155,0.07256554307116105
+Remove Tree,Bronx,1.0,2.0,False,115,0.05383895131086142
+Remove Tree,Bronx,2.0,3.0,False,105,0.04915730337078652
+Remove Tree,Bronx,3.0,4.0,False,121,0.05664794007490637
+Remove Tree,Bronx,4.0,5.0,False,92,0.04307116104868914
+Remove Tree,Bronx,5.0,6.0,False,97,0.04541198501872659
+Remove Tree,Bronx,6.0,7.0,False,98,0.04588014981273408
+Remove Tree,Bronx,7.0,8.0,False,79,0.03698501872659176
+Remove Tree,Bronx,8.0,9.0,False,76,0.035580524344569285
+Remove Tree,Bronx,9.0,10.0,False,78,0.03651685393258427
+Remove Tree,Bronx,10.0,11.0,False,58,0.027153558052434457
+Remove Tree,Bronx,11.0,12.0,False,56,0.026217228464419477
+Remove Tree,Bronx,12.0,13.0,False,77,0.03604868913857678
+Remove Tree,Bronx,13.0,14.0,False,80,0.03745318352059925
+Remove Tree,Bronx,14.0,15.0,False,70,0.03277153558052434
+Remove Tree,Bronx,15.0,16.0,False,59,0.02762172284644195
+Remove Tree,Bronx,16.0,17.0,False,52,0.024344569288389514
+Remove Tree,Bronx,17.0,18.0,False,40,0.018726591760299626
+Remove Tree,Bronx,18.0,19.0,False,53,0.024812734082397005
+Remove Tree,Bronx,19.0,20.0,False,41,0.019194756554307114
+Remove Tree,Bronx,20.0,21.0,False,33,0.01544943820224719
+Remove Tree,Bronx,21.0,22.0,False,29,0.013576779026217229
+Remove Tree,Bronx,22.0,23.0,False,24,0.011235955056179775
+Remove Tree,Bronx,23.0,24.0,False,16,0.00749063670411985
+Remove Tree,Bronx,24.0,25.0,False,16,0.00749063670411985
+Remove Tree,Bronx,25.0,26.0,False,22,0.010299625468164793
+Remove Tree,Bronx,26.0,27.0,False,20,0.009363295880149813
+Remove Tree,Bronx,27.0,28.0,False,17,0.007958801498127341
+Remove Tree,Bronx,28.0,29.0,False,23,0.010767790262172285
+Remove Tree,Bronx,29.0,30.0,False,20,0.009363295880149813
+Remove Tree,Bronx,30.0,31.0,False,27,0.012640449438202247
+Remove Tree,Bronx,31.0,32.0,False,11,0.005149812734082397
+Remove Tree,Bronx,32.0,33.0,False,17,0.007958801498127341
+Remove Tree,Bronx,33.0,34.0,False,20,0.009363295880149813
+Remove Tree,Bronx,34.0,35.0,False,23,0.010767790262172285
+Remove Tree,Bronx,35.0,36.0,False,19,0.008895131086142321
+Remove Tree,Bronx,36.0,37.0,False,19,0.008895131086142321
+Remove Tree,Bronx,37.0,38.0,False,14,0.006554307116104869
+Remove Tree,Bronx,38.0,39.0,False,9,0.004213483146067416
+Remove Tree,Bronx,39.0,40.0,False,11,0.005149812734082397
+Remove Tree,Bronx,40.0,41.0,False,8,0.003745318352059925
+Remove Tree,Bronx,41.0,42.0,False,18,0.008426966292134831
+Remove Tree,Bronx,42.0,43.0,False,19,0.008895131086142321
+Remove Tree,Bronx,43.0,44.0,False,11,0.005149812734082397
+Remove Tree,Bronx,44.0,45.0,False,18,0.008426966292134831
+Remove Tree,Bronx,45.0,46.0,False,10,0.0046816479400749065
+Remove Tree,Bronx,46.0,47.0,False,16,0.00749063670411985
+Remove Tree,Bronx,47.0,48.0,False,16,0.00749063670411985
+Remove Tree,Bronx,48.0,49.0,False,17,0.007958801498127341
+Remove Tree,Bronx,49.0,50.0,True,11,0.005149812734082397
+Remove Tree,Manhattan,0.0,1.0,False,318,0.1481136469492315
+Remove Tree,Manhattan,1.0,2.0,False,250,0.11644154634373545
+Remove Tree,Manhattan,2.0,3.0,False,219,0.10200279459711226
+Remove Tree,Manhattan,3.0,4.0,False,189,0.08802980903586399
+Remove Tree,Manhattan,4.0,5.0,False,133,0.061946902654867256
+Remove Tree,Manhattan,5.0,6.0,False,159,0.07405682347461574
+Remove Tree,Manhattan,6.0,7.0,False,119,0.055426176059618075
+Remove Tree,Manhattan,7.0,8.0,False,85,0.03959012575687005
+Remove Tree,Manhattan,8.0,9.0,False,62,0.02887750349324639
+Remove Tree,Manhattan,9.0,10.0,False,53,0.024685607824871916
+Remove Tree,Manhattan,10.0,11.0,False,31,0.014438751746623195
+Remove Tree,Manhattan,11.0,12.0,False,39,0.018164881229622728
+Remove Tree,Manhattan,12.0,13.0,False,42,0.019562179785747556
+Remove Tree,Manhattan,13.0,14.0,False,31,0.014438751746623195
+Remove Tree,Manhattan,14.0,15.0,False,38,0.017699115044247787
+Remove Tree,Manhattan,15.0,16.0,False,27,0.012575687005123428
+Remove Tree,Manhattan,16.0,17.0,False,44,0.020493712156497437
+Remove Tree,Manhattan,17.0,18.0,False,17,0.007918025151374011
+Remove Tree,Manhattan,18.0,19.0,False,25,0.011644154634373545
+Remove Tree,Manhattan,19.0,20.0,False,15,0.0069864927806241265
+Remove Tree,Manhattan,20.0,21.0,False,24,0.011178388448998603
+Remove Tree,Manhattan,21.0,22.0,False,15,0.0069864927806241265
+Remove Tree,Manhattan,22.0,23.0,False,16,0.007452258965999069
+Remove Tree,Manhattan,23.0,24.0,False,20,0.009315323707498836
+Remove Tree,Manhattan,24.0,25.0,False,20,0.009315323707498836
+Remove Tree,Manhattan,25.0,26.0,False,14,0.006520726595249185
+Remove Tree,Manhattan,26.0,27.0,False,13,0.006054960409874243
+Remove Tree,Manhattan,27.0,28.0,False,16,0.007452258965999069
+Remove Tree,Manhattan,28.0,29.0,False,4,0.0018630647414997672
+Remove Tree,Manhattan,29.0,30.0,False,3,0.0013972985561248254
+Remove Tree,Manhattan,30.0,31.0,False,6,0.0027945971122496508
+Remove Tree,Manhattan,31.0,32.0,False,3,0.0013972985561248254
+Remove Tree,Manhattan,32.0,33.0,False,4,0.0018630647414997672
+Remove Tree,Manhattan,33.0,34.0,False,8,0.0037261294829995344
+Remove Tree,Manhattan,34.0,35.0,False,13,0.006054960409874243
+Remove Tree,Manhattan,35.0,36.0,False,6,0.0027945971122496508
+Remove Tree,Manhattan,36.0,37.0,False,5,0.002328830926874709
+Remove Tree,Manhattan,37.0,38.0,False,2,0.0009315323707498836
+Remove Tree,Manhattan,38.0,39.0,False,3,0.0013972985561248254
+Remove Tree,Manhattan,39.0,40.0,False,1,0.0004657661853749418
+Remove Tree,Manhattan,40.0,41.0,False,11,0.005123428039124359
+Remove Tree,Manhattan,41.0,42.0,False,9,0.004191895668374476
+Remove Tree,Manhattan,42.0,43.0,False,5,0.002328830926874709
+Remove Tree,Manhattan,43.0,44.0,False,4,0.0018630647414997672
+Remove Tree,Manhattan,44.0,45.0,False,3,0.0013972985561248254
+Remove Tree,Manhattan,45.0,46.0,False,1,0.0004657661853749418
+Remove Tree,Manhattan,46.0,47.0,False,6,0.0027945971122496508
+Remove Tree,Manhattan,47.0,48.0,False,2,0.0009315323707498836
+Remove Tree,Manhattan,48.0,49.0,False,11,0.005123428039124359
+Remove Tree,Manhattan,49.0,50.0,True,3,0.0013972985561248254
+Root/Sewer/Sidewalk,Bronx,0.0,1.0,False,28,0.03927068723702665
+Root/Sewer/Sidewalk,Bronx,1.0,2.0,False,44,0.061711079943899017
+Root/Sewer/Sidewalk,Bronx,2.0,3.0,False,49,0.06872370266479663
+Root/Sewer/Sidewalk,Bronx,3.0,4.0,False,29,0.04067321178120617
+Root/Sewer/Sidewalk,Bronx,4.0,5.0,False,32,0.04488078541374474
+Root/Sewer/Sidewalk,Bronx,5.0,6.0,False,27,0.037868162692847124
+Root/Sewer/Sidewalk,Bronx,6.0,7.0,False,25,0.03506311360448808
+Root/Sewer/Sidewalk,Bronx,7.0,8.0,False,38,0.05329593267882188
+Root/Sewer/Sidewalk,Bronx,8.0,9.0,False,27,0.037868162692847124
+Root/Sewer/Sidewalk,Bronx,9.0,10.0,False,12,0.016830294530154277
+Root/Sewer/Sidewalk,Bronx,10.0,11.0,False,10,0.014025245441795231
+Root/Sewer/Sidewalk,Bronx,11.0,12.0,False,16,0.02244039270687237
+Root/Sewer/Sidewalk,Bronx,12.0,13.0,False,22,0.030855539971949508
+Root/Sewer/Sidewalk,Bronx,13.0,14.0,False,18,0.025245441795231416
+Root/Sewer/Sidewalk,Bronx,14.0,15.0,False,21,0.029453015427769985
+Root/Sewer/Sidewalk,Bronx,15.0,16.0,False,17,0.023842917251051893
+Root/Sewer/Sidewalk,Bronx,16.0,17.0,False,7,0.009817671809256662
+Root/Sewer/Sidewalk,Bronx,17.0,18.0,False,10,0.014025245441795231
+Root/Sewer/Sidewalk,Bronx,18.0,19.0,False,5,0.0070126227208976155
+Root/Sewer/Sidewalk,Bronx,19.0,20.0,False,11,0.015427769985974754
+Root/Sewer/Sidewalk,Bronx,20.0,21.0,False,16,0.02244039270687237
+Root/Sewer/Sidewalk,Bronx,21.0,22.0,False,17,0.023842917251051893
+Root/Sewer/Sidewalk,Bronx,22.0,23.0,False,15,0.021037868162692847
+Root/Sewer/Sidewalk,Bronx,23.0,24.0,False,4,0.005610098176718092
+Root/Sewer/Sidewalk,Bronx,24.0,25.0,False,8,0.011220196353436185
+Root/Sewer/Sidewalk,Bronx,25.0,26.0,False,12,0.016830294530154277
+Root/Sewer/Sidewalk,Bronx,26.0,27.0,False,14,0.019635343618513323
+Root/Sewer/Sidewalk,Bronx,27.0,28.0,False,11,0.015427769985974754
+Root/Sewer/Sidewalk,Bronx,28.0,29.0,False,22,0.030855539971949508
+Root/Sewer/Sidewalk,Bronx,29.0,30.0,False,13,0.0182328190743338
+Root/Sewer/Sidewalk,Bronx,30.0,31.0,False,7,0.009817671809256662
+Root/Sewer/Sidewalk,Bronx,31.0,32.0,False,8,0.011220196353436185
+Root/Sewer/Sidewalk,Bronx,32.0,33.0,False,7,0.009817671809256662
+Root/Sewer/Sidewalk,Bronx,33.0,34.0,False,8,0.011220196353436185
+Root/Sewer/Sidewalk,Bronx,34.0,35.0,False,7,0.009817671809256662
+Root/Sewer/Sidewalk,Bronx,35.0,36.0,False,13,0.0182328190743338
+Root/Sewer/Sidewalk,Bronx,36.0,37.0,False,8,0.011220196353436185
+Root/Sewer/Sidewalk,Bronx,37.0,38.0,False,3,0.004207573632538569
+Root/Sewer/Sidewalk,Bronx,38.0,39.0,False,9,0.012622720897615708
+Root/Sewer/Sidewalk,Bronx,39.0,40.0,False,6,0.008415147265077139
+Root/Sewer/Sidewalk,Bronx,40.0,41.0,False,4,0.005610098176718092
+Root/Sewer/Sidewalk,Bronx,41.0,42.0,False,8,0.011220196353436185
+Root/Sewer/Sidewalk,Bronx,42.0,43.0,False,5,0.0070126227208976155
+Root/Sewer/Sidewalk,Bronx,43.0,44.0,False,7,0.009817671809256662
+Root/Sewer/Sidewalk,Bronx,44.0,45.0,False,4,0.005610098176718092
+Root/Sewer/Sidewalk,Bronx,45.0,46.0,False,6,0.008415147265077139
+Root/Sewer/Sidewalk,Bronx,46.0,47.0,False,8,0.011220196353436185
+Root/Sewer/Sidewalk,Bronx,47.0,48.0,False,8,0.011220196353436185
+Root/Sewer/Sidewalk,Bronx,48.0,49.0,False,5,0.0070126227208976155
+Root/Sewer/Sidewalk,Bronx,49.0,50.0,True,2,0.002805049088359046
+Root/Sewer/Sidewalk,Manhattan,0.0,1.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,1.0,2.0,False,2,0.04878048780487805
+Root/Sewer/Sidewalk,Manhattan,2.0,3.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,3.0,4.0,False,4,0.0975609756097561
+Root/Sewer/Sidewalk,Manhattan,4.0,5.0,False,2,0.04878048780487805
+Root/Sewer/Sidewalk,Manhattan,5.0,6.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,6.0,7.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,7.0,8.0,False,2,0.04878048780487805
+Root/Sewer/Sidewalk,Manhattan,8.0,9.0,False,1,0.024390243902439025
+Root/Sewer/Sidewalk,Manhattan,9.0,10.0,False,2,0.04878048780487805
+Root/Sewer/Sidewalk,Manhattan,10.0,11.0,False,2,0.04878048780487805
+Root/Sewer/Sidewalk,Manhattan,11.0,12.0,False,1,0.024390243902439025
+Root/Sewer/Sidewalk,Manhattan,12.0,13.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,13.0,14.0,False,3,0.07317073170731707
+Root/Sewer/Sidewalk,Manhattan,14.0,15.0,False,2,0.04878048780487805
+Root/Sewer/Sidewalk,Manhattan,15.0,16.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,16.0,17.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,17.0,18.0,False,1,0.024390243902439025
+Root/Sewer/Sidewalk,Manhattan,18.0,19.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,19.0,20.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,20.0,21.0,False,2,0.04878048780487805
+Root/Sewer/Sidewalk,Manhattan,21.0,22.0,False,5,0.12195121951219512
+Root/Sewer/Sidewalk,Manhattan,22.0,23.0,False,2,0.04878048780487805
+Root/Sewer/Sidewalk,Manhattan,23.0,24.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,24.0,25.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,25.0,26.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,26.0,27.0,False,1,0.024390243902439025
+Root/Sewer/Sidewalk,Manhattan,27.0,28.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,28.0,29.0,False,3,0.07317073170731707
+Root/Sewer/Sidewalk,Manhattan,29.0,30.0,False,1,0.024390243902439025
+Root/Sewer/Sidewalk,Manhattan,30.0,31.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,31.0,32.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,32.0,33.0,False,1,0.024390243902439025
+Root/Sewer/Sidewalk,Manhattan,33.0,34.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,34.0,35.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,35.0,36.0,False,1,0.024390243902439025
+Root/Sewer/Sidewalk,Manhattan,36.0,37.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,37.0,38.0,False,1,0.024390243902439025
+Root/Sewer/Sidewalk,Manhattan,38.0,39.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,39.0,40.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,40.0,41.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,41.0,42.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,42.0,43.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,43.0,44.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,44.0,45.0,False,1,0.024390243902439025
+Root/Sewer/Sidewalk,Manhattan,45.0,46.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,46.0,47.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,47.0,48.0,False,0,0.0
+Root/Sewer/Sidewalk,Manhattan,48.0,49.0,False,1,0.024390243902439025
+Root/Sewer/Sidewalk,Manhattan,49.0,50.0,True,0,0.0

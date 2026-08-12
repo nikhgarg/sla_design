@@ -1,8 +1,11 @@
 from simulator import *
 import argparse
+import numpy as np
 import pandas as pd
 import geopandas as gpd
 import torch
+
+from policy_decoding import BOROUGHS, CATEGORIES, decode_policy_vector
 
 from torch import Tensor
 
@@ -15,82 +18,17 @@ def simulation_loop(X,
                     obj = 'delay_75',
                     drop_cost = 100,
                     drop_by_age = False,
-                    equity = "max"
+                    equity = "max",
+                    fcfs_violation = 0.99,
+                    drop_age = 100,
     ):
-    # first determine whether city budget and byborough policy are true
-    service_fractions = np.array([[0.9,0.9,0.9,0.9,0.9,0.9],
-                                                    [0.9,0.9,0.9,0.9,0.9,0.9],
-                                                    [0.9,0.9,0.9,0.9,0.9,0.9],
-                                                    [0.9,0.9,0.9,0.9,0.9,0.9],
-                                                    [0.9,0.9,0.9,0.9,0.9,0.9]])
-    if len(X) == 35:
-        city_budget = False
-        byborough_policy = True
-        borough_budgets = X[:5]
-        inspection_policies = X[5:35].reshape(5,6)
-        drop_by_age = True
-    elif len(X) == 65:
-        city_budget = False
-        byborough_policy = True
-        borough_budgets = X[:5]
-        inspection_policies = X[5:35].reshape(5,6)
-        service_fractions = np.maximum(X[35:65], 0.10).reshape(5,6)
-        drop_by_age = False
-    elif len(X) == 60:
-        city_budget = True
-        byborough_policy = True
-        borough_budgets = None
-        inspection_policies = X[:30].reshape(5,6)
-        service_fractions = np.maximum(X[30:60], 0.10).reshape(5,6)
-        drop_by_age = False
-    elif len(X) == 10:
-        city_budget = True
-        byborough_policy = False
-        borough_budgets = None
-        inspection_policies = X[:5]
-        service_fractions = X[5:]
-        drop_by_age = False
-    else:
-        raise ValueError("Invalid input size")
-    
-    # standardize the inputs
-    if city_budget == False:
-        # standardize borough budgets and inspection policies
-        borough_budgets = np.array(borough_budgets)
-        # ensure no borough budget is lower than 0.01, this helps to avoid negative budgets
-        borough_budgets = np.maximum(borough_budgets, 0.01)
-        borough_budgets = borough_budgets / np.sum(borough_budgets)
-        borough_budgets = borough_budgets.round(6)
-        # np.multinomial tolerates sum of probabilities of the first n-1 entries to be less than 1, ensure that
-        if sum(borough_budgets) > 1:
-            borough_budgets[0] = 0.999999 - sum(borough_budgets[1:])
-
-    if byborough_policy == True:
-        if city_budget == False:
-            inspection_policies = np.array(inspection_policies).reshape(5,6)
-            # ensure no policy is lower than 0.01, this helps to avoid negative budgets
-            inspection_policies = np.maximum(inspection_policies, 0.0005)
-            inspection_policies = inspection_policies / np.sum(inspection_policies, axis=1).reshape(5,1)
-            inspection_policies = inspection_policies.round(6)
-            for i in range(5):
-                if sum(inspection_policies[i,:]) > 1:
-                    inspection_policies[i,0] = 0.999999 - sum(inspection_policies[i,1:])
-        else:
-            inspection_policies = np.array(inspection_policies).reshape(5,6)
-            # ensure no policy is lower than 0.01, this helps to avoid negative budgets
-            inspection_policies = np.maximum(inspection_policies, 0.0001)
-            inspection_policies = inspection_policies / np.sum(inspection_policies)
-            inspection_policies = inspection_policies.round(6)
-            if np.sum(inspection_policies) > 1:
-                inspection_policies[0] = 0.999999 - sum(inspection_policies[1:])
-    else:
-        inspection_policies = np.array(inspection_policies)
-        # ensure no policy is lower than 0.01, this helps to avoid negative budgets
-        inspection_policies = np.maximum(inspection_policies, 0.01)
-        inspection_policies = inspection_policies / np.sum(inspection_policies)
-        inspection_policies = inspection_policies.round(6)
-        if sum(inspection_policies) > 1:
-            inspection_policies[0] = 0.999999 - sum(inspection_policies[1:])
+    decoded = decode_policy_vector(X)
+    city_budget = decoded["city_budget"]
+    byborough_policy = decoded["byborough_policy"]
+    borough_budgets = decoded["borough_budgets"]
+    inspection_policies = decoded["inspection_policies"]
+    service_fractions = decoded["service_fractions"]
+    drop_by_age = decoded["drop_by_age"]
     
     # run the simulation
     sim = simulator(borough_budgets = borough_budgets,
@@ -100,11 +38,11 @@ def simulation_loop(X,
                     recursive = 3,
                     date_start = '2019-01-01',
                     date_end = '2019-12-31',
-                    fcfs_violation=0.99,
+                    fcfs_violation=fcfs_violation,
                     service_fractions=service_fractions,
-                    drop_age=100,
+                    drop_age=drop_age,
                     drop_using_age=drop_by_age,
-                    save_logs = True,
+                    save_logs = False,
                     sla_objective = obj,
                     drop_cost = drop_cost,
                     equity = equity,
@@ -127,11 +65,18 @@ class parks_simulation:
                 drop_cost = 100,
                 drop_age = 100,
                 equity = "max",
+                fcfs_violation = 0.99,
     ) -> None:
+        if not city_budget and not byborough_policy:
+            raise ValueError('Borough-budget policies require byborough_policy=True')
+        if city_budget and drop_by_age:
+            raise ValueError('City-budget policies do not support drop_by_age=True')
         self.city_budget = city_budget
         self.borough_policy = byborough_policy
         self.drop_by_age = drop_by_age
+        self.drop_age = drop_age
         self.equity = equity
+        self.fcfs_violation = fcfs_violation
         if not city_budget:
             if drop_by_age:
                 self.dim = 35
@@ -145,7 +90,7 @@ class parks_simulation:
             if byborough_policy:
                 self.dim = 60
             else:
-                self.dim = 10
+                self.dim = 12
             self.ref_point = [-7000000, -3000000]
             self.ref_point = torch.tensor(self.ref_point)
             self.max_hv = -10000000.0
@@ -159,6 +104,7 @@ class parks_simulation:
         print("city budget:", self.city_budget)
         print("byborough_policy:", self.borough_policy)
         print("drop_by_age:", self.drop_by_age)
+        print("drop_age:", self.drop_age)
         print("obj:", self.obj)
         print("drop_cost:", self.drop_cost)
         print("equity_objective:", self.equity)
@@ -171,7 +117,6 @@ class parks_simulation:
         """
         # we need to run the simulation in parrallel
         # we need to return the two objectives
-        pool = multiprocessing.Pool()
         # segment the input into parts of dim
         X = X.numpy().flatten()
         print(X.shape)
@@ -179,9 +124,12 @@ class parks_simulation:
                                           obj = self.obj, 
                                           drop_cost = self.drop_cost, 
                                           drop_by_age = self.drop_by_age, 
-                                          equity = self.equity)
+                                          drop_age = self.drop_age,
+                                          equity = self.equity,
+                                          fcfs_violation = self.fcfs_violation)
         X = np.array_split(X, len(X)/self.dim)
-        results = pool.map(partial_simulation_loop, X)
+        with multiprocessing.Pool() as pool:
+            results = pool.map(partial_simulation_loop, X)
         return torch.tensor(results)
 
         
@@ -193,81 +141,15 @@ def simulation_loop_eval(X,
                     date_end = '2019-12-31',
                     fcfs_violation=0.99,
                     dropping_frequency=[28, 80, 26, 27, 36],
-                    equity="max"):
-    # first determine whether city budget and byborough policy are true
-    service_fractions = np.array([[0.9,0.9,0.9,0.9,0.9,0.9],
-                                                    [0.9,0.9,0.9,0.9,0.9,0.9],
-                                                    [0.9,0.9,0.9,0.9,0.9,0.9],
-                                                    [0.9,0.9,0.9,0.9,0.9,0.9],
-                                                    [0.9,0.9,0.9,0.9,0.9,0.9]])
-    if len(X) == 35:
-        city_budget = False
-        byborough_policy = True
-        borough_budgets = X[:5]
-        inspection_policies = X[5:35].reshape(5,6)
-        drop_by_age = True
-    elif len(X) == 65:
-        city_budget = False
-        byborough_policy = True
-        borough_budgets = X[:5]
-        inspection_policies = X[5:35].reshape(5,6)
-        service_fractions = np.maximum(X[35:65], 0.10).reshape(5,6)
-        drop_by_age = False
-    elif len(X) == 60:
-        city_budget = True
-        byborough_policy = True
-        borough_budgets = None
-        inspection_policies = X[:30].reshape(5,6)
-        service_fractions = np.maximum(X[30:60], 0.10).reshape(5,6)
-        drop_by_age = False
-    elif len(X) == 10:
-        city_budget = True
-        byborough_policy = False
-        borough_budgets = None
-        inspection_policies = X[:5]
-        service_fractions = X[5:]
-        drop_by_age = False
-    else:
-        raise ValueError("Invalid input size")
-    
-    # standardize the inputs
-    if city_budget == False:
-        # standardize borough budgets and inspection policies
-        borough_budgets = np.array(borough_budgets)
-        # ensure no borough budget is lower than 0.01, this helps to avoid negative budgets
-        borough_budgets = np.maximum(borough_budgets, 0.01)
-        borough_budgets = borough_budgets / np.sum(borough_budgets)
-        borough_budgets = borough_budgets.round(6)
-        # np.multinomial tolerates sum of probabilities of the first n-1 entries to be less than 1, ensure that
-        if sum(borough_budgets) > 1:
-            borough_budgets[0] = 0.999999 - sum(borough_budgets[1:])
-
-    if byborough_policy == True:
-        if city_budget == False:
-            inspection_policies = np.array(inspection_policies).reshape(5,6)
-            # ensure no policy is lower than 0.01, this helps to avoid negative budgets
-            inspection_policies = np.maximum(inspection_policies, 0.0005)
-            inspection_policies = inspection_policies / np.sum(inspection_policies, axis=1).reshape(5,1)
-            inspection_policies = inspection_policies.round(6)
-            for i in range(5):
-                if sum(inspection_policies[i,:]) > 1:
-                    inspection_policies[i,0] = 0.999999 - sum(inspection_policies[i,1:])
-        else:
-            inspection_policies = np.array(inspection_policies).reshape(5,6)
-            # ensure no policy is lower than 0.01, this helps to avoid negative budgets
-            inspection_policies = np.maximum(inspection_policies, 0.0001)
-            inspection_policies = inspection_policies / np.sum(inspection_policies)
-            inspection_policies = inspection_policies.round(6)
-            if np.sum(inspection_policies) > 1:
-                inspection_policies[0] = 0.999999 - sum(inspection_policies[1:])
-    else:
-        inspection_policies = np.array(inspection_policies)
-        # ensure no policy is lower than 0.01, this helps to avoid negative budgets
-        inspection_policies = np.maximum(inspection_policies, 0.01)
-        inspection_policies = inspection_policies / np.sum(inspection_policies)
-        inspection_policies = inspection_policies.round(6)
-        if sum(inspection_policies) > 1:
-            inspection_policies[0] = 0.999999 - sum(inspection_policies[1:])
+                    equity="max",
+                    drop_age=100):
+    decoded = decode_policy_vector(X)
+    city_budget = decoded["city_budget"]
+    byborough_policy = decoded["byborough_policy"]
+    borough_budgets = decoded["borough_budgets"]
+    inspection_policies = decoded["inspection_policies"]
+    service_fractions = decoded["service_fractions"]
+    drop_by_age = decoded["drop_by_age"]
     
     # run the simulation
     sim = simulator(borough_budgets = borough_budgets,
@@ -280,7 +162,7 @@ def simulation_loop_eval(X,
                     fcfs_violation=fcfs_violation,
                     dropping_frequency=dropping_frequency,
                     service_fractions=service_fractions,
-                    drop_age=100,
+                    drop_age=drop_age,
                     drop_using_age=drop_by_age,
                     save_logs = True,
                     sla_objective = obj,
@@ -293,85 +175,33 @@ def simulation_loop_eval(X,
 
 
 def format_x(X):
-    if len(X) == 35:
-        city_budget = False
-        byborough_policy = True
-        borough_budgets = X[:5]
-        inspection_policies = X[5:35].reshape(5,6)
-        drop_by_age = True
-    elif len(X) == 65:
-        city_budget = False
-        byborough_policy = True
-        borough_budgets = X[:5]
-        inspection_policies = X[5:35].reshape(5,6)
-        service_fractions = X[35:65].reshape(5,6)
-        drop_by_age = False
-    elif len(X) == 60:
-        city_budget = True
-        byborough_policy = True
-        borough_budgets = None
-        inspection_policies = X[:30].reshape(5,6)
-        service_fractions = X[30:60].reshape(5,6)
-        drop_by_age = False
-    elif len(X) == 10:
-        city_budget = True
-        byborough_policy = False
-        borough_budgets = None
-        inspection_policies = X[:5]
-        service_fractions = X[5:]
-        drop_by_age = False
-    else:
-        raise ValueError("Invalid input size")
-    
-    
-    # standardize the inputs
-    if city_budget == False:
-        # standardize borough budgets and inspection policies
-        borough_budgets = np.array(borough_budgets)
-        # ensure no borough budget is lower than 0.01, this helps to avoid negative budgets
-        borough_budgets = np.maximum(borough_budgets, 0.01)
-        borough_budgets = borough_budgets / np.sum(borough_budgets)
-        borough_budgets = borough_budgets.round(6)
-        # np.multinomial tolerates sum of probabilities of the first n-1 entries to be less than 1, ensure that
-        if sum(borough_budgets) > 1:
-            borough_budgets[0] = 0.999999 - sum(borough_budgets[1:])
-
-    if byborough_policy == True:
-        if city_budget == False:
-            inspection_policies = np.array(inspection_policies).reshape(5,6)
-            # ensure no policy is lower than 0.0005, this helps to avoid negative budgets
-            inspection_policies = np.maximum(inspection_policies, 0.0005)
-            inspection_policies = inspection_policies / np.sum(inspection_policies, axis=1).reshape(5,1)
-            inspection_policies = inspection_policies.round(6)
-            for i in range(5):
-                if sum(inspection_policies[i,:]) > 1:
-                    inspection_policies[i,0] = 0.999999 - sum(inspection_policies[i,1:])
-        else:
-            inspection_policies = np.array(inspection_policies).reshape(5,6)
-            # ensure no policy is lower than 0.01, this helps to avoid negative budgets
-            inspection_policies = np.maximum(inspection_policies, 0.0001)
-            inspection_policies = inspection_policies / np.sum(inspection_policies)
-            inspection_policies = inspection_policies.round(6)
-            if np.sum(inspection_policies) > 1:
-                inspection_policies[0] = 0.999999 - sum(inspection_policies[1:])
-    else:
-        inspection_policies = np.array(inspection_policies)
-        # ensure no policy is lower than 0.0001, this helps to avoid negative budgets
-        inspection_policies = np.maximum(inspection_policies, 0.0001)
-        inspection_policies = inspection_policies / np.sum(inspection_policies)
-        inspection_policies = inspection_policies.round(6)
-        if sum(inspection_policies) > 1:
-            inspection_policies[0] = 0.999999 - sum(inspection_policies[1:])
+    decoded = decode_policy_vector(X)
+    city_budget = decoded["city_budget"]
+    byborough_policy = decoded["byborough_policy"]
+    borough_budgets = decoded["borough_budgets"]
+    inspection_policies = decoded["inspection_policies"]
+    service_fractions = decoded["service_fractions"]
+    drop_by_age = decoded["drop_by_age"]
 
     if not city_budget:
-        borough_budgets = pd.DataFrame(borough_budgets.reshape(1, -1), columns=['Bronx', 'Brooklyn', 'Manhattan', 'Queens', 'Staten Island'])
+        borough_budgets = pd.DataFrame(borough_budgets.reshape(1, -1), columns=BOROUGHS)
         print('borough_budgets:\n', borough_budgets.round(3))
     
     
-    inspection_policies = pd.DataFrame(inspection_policies.T, columns=['Bronx', 'Brooklyn', 'Manhattan', 'Queens', 'Staten Island'], index=['Hazard', 'Illegal Tree Damage', 'Other', 'Prune', 'Remove Tree',
-    'Root/Sewer/Sidewalk'])
-    service_fractions = pd.DataFrame(service_fractions.T, columns=['Bronx', 'Brooklyn', 'Manhattan', 'Queens', 'Staten Island'], index=['Hazard', 'Illegal Tree Damage', 'Other', 'Prune', 'Remove Tree',
-    'Root/Sewer/Sidewalk'])
+    if byborough_policy:
+        inspection_policies = pd.DataFrame(
+            inspection_policies.T, columns=BOROUGHS, index=CATEGORIES
+        )
+        service_fractions = pd.DataFrame(
+            service_fractions.T, columns=BOROUGHS, index=CATEGORIES
+        )
+    else:
+        inspection_policies = pd.DataFrame(
+            inspection_policies, columns=["City"], index=CATEGORIES
+        )
+        service_fractions = pd.DataFrame(
+            service_fractions, columns=["City"], index=CATEGORIES
+        )
     print('inspection_policy:\n', inspection_policies.round(3))
     print('target_service_fractions:\n', service_fractions.round(3))
 
